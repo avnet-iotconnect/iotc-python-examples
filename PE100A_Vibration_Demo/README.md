@@ -96,7 +96,7 @@
 
 <img src=".//media/PE100A_Motor_Monitor_Demo_Diagram.png"/>
 
-* Within this directory, there is a copy of the diagram (called “PE100A_Motor_Monitor_Demo_Diagram.png”) that can be downloaded for further inspection.
+* Within this "media" folder of this directory, there is a copy of the diagram (called “PE100A_Motor_Monitor_Demo_Diagram.png”) that can be downloaded for further inspection.
 
 ## Step 7: IoTConnect Python SDK
 * Open a terminal window and run these commands in this order:
