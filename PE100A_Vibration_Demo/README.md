@@ -5,7 +5,7 @@
 
 ## Step 2: Sign in to IoTConnect Account
 * Navigate to https://awspoc.iotconnect.io/ and enter your account credentials.
-* This should bring you to your AWS IoTConnect Dashboard.
+   * This should bring you to your AWS IoTConnect Dashboard.
 
 ## Step 3: Create a Template for Your Device 
 * On the far-left side of the screen is a navy-blue toolbar, hover your cursor over the icon that looks like a processor chip and choose “Device” out of the dropdown options (shown below). 
