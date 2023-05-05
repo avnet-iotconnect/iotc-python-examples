@@ -21,7 +21,7 @@
 <img src=".//media/wfi32-iot-board.png"/>
 
 * Enter the following information into the Template creation page and click “Save”:
-** Template Code: PE100
-** Template Name: PE100_AWS_Demo
-** Authentication Type: Self Signed Certificate
-** Device Message Version: 2.1
+  * Template Code: PE100
+  * Template Name: PE100_AWS_Demo
+  * Authentication Type: Self Signed Certificate
+  * Device Message Version: 2.1
