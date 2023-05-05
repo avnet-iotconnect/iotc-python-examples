@@ -117,5 +117,13 @@
 * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
    * ```python3 PE100_Motor_Monitor_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
+* To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
+
+<img src=".//media/image9.png"/>
+
+* Your CPID and Environment will be shown as in the image below:
+
+<img src=".//media/image10.png"/>
+
 
 
