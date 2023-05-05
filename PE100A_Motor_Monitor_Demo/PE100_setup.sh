@@ -31,7 +31,7 @@ sudo mount /dev/sda1 /media/usbdrive || sudo mount /dev/sdb1 /media/usbdrive
 cd /media/usbdrive
 cp ./pk_PE100_Demo.pem  ./cert_PE100_Demo.crt ./root-CA.pem /home/asus/PE100_Demo
 
-cd /home/asus/PE100_Demo/iotc-pov-engineering/PE100A_Vibration_Demo/
+cd /home/asus/PE100_Demo/iotc-pov-engineering/PE100A_Motor_Monitor_Demo/
 cp ./ADAM.py ./ModbusDevice.py ./PE100_Motor_Monitor_Demo.py /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample
 cp ./root-CA.pem /home/asus/PE100_Demo
 
