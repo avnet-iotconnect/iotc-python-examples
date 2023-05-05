@@ -89,6 +89,7 @@
 
 ## Step 5: Change UART to RS-485 
 * Change the UART protocol to RS-485 by following section 3.3 of the [PE100A Software Manual](https://github.com/ASUS-IPC/ASUS-IPC/wiki/PE100A)
+   * *Note: You will have to open the PE100A and change some dipswitches during this process*
    * **Make sure to reboot the device after this is complete.**
 
 ## Step 6: Physically Set Up Demo Hardware
