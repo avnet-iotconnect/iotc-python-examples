@@ -10,15 +10,15 @@
 ## Step 3: Create a Template for Your Device 
 * On the far-left side of the screen is a navy-blue toolbar, hover your cursor over the icon that looks like a processor chip and choose “Device” out of the dropdown options (shown below). 
 
-<img src=".//media/wfi32-iot-board.png"/>
+<img src=".//media/image1.png"/>
 
 * On the toolbar at the bottom of the page, select the “Templates” tab.
 
-<img src=".//media/image1"/>
+<img src=".//media/image2.png"/>
 
 * On the Templates page, click the “Create Template” button in the top right corner of the screen. 
 
-<img src=".//media/image2"/>
+<img src=".//media/image3.png"/>
 
 * Enter the following information into the Template creation page and click “Save”:
   * Template Code: PE100
@@ -28,7 +28,7 @@
 
 * Click on the “Attributes” tab below the information you just entered.
 
-<img src=".//media/image3"/>
+<img src=".//media/image4.png"/>
 
 * For each of these attributes:
   * z_rms_velo_in_sec
@@ -63,7 +63,7 @@
 ## Step 4: Create a Your Device in IoTConnect
 * Navigate back to the “Device” menu and click on “Create Device” in the top right corner of the screen.
 
-<img src=".//media/image4"/>
+<img src=".//media/image5.png"/>
 
 * Enter the following information and then click “Save and View”:
    * Unique Id: PE100Demo
@@ -71,15 +71,15 @@
    * Entity: Avnet
    * Template: PE100_AWS_Demo
  
-<img src=".//media/image5"/>
+<img src=".//media/image6.png"/>
 
 * In the resulting page, click “Connection Info” in the top-right corner of the page.
 
-<img src=".//media/image6"/>
+<img src=".//media/image7.png"/>
 
 * Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “PE100_Demo-certificates.”
 
-<img src=".//media/image7"/>
+<img src=".//media/image8.png"/>
 
 * Extract the certificate package folder and copy the individual files to a USB Storage Drive (flash drive). The files should include:
    * pk_PE100_Demo.pem
@@ -94,7 +94,7 @@
 ## Step 6: Physically Set Up Demo Hardware
 * Follow the diagram below to guide the physical setup of the demo:
 
-<img src=".//media/image8"/>
+<img src=".//media/PE100A_Motor_Monitor_Demo_Diagram.png"/>
 
 * Within this directory, there is a copy of the diagram (called “PE100A_Motor_Monitor_Demo_Diagram.png”) that can be downloaded for further inspection.
 
