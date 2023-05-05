@@ -56,7 +56,7 @@
   * ac_current_amps
  
 Enter the following information and click “Save”:
-  * Local Name: *Attribute Name Exactly as Listed*
+  * Local Name: **Attribute Name Exactly as Listed**
   * Data Type: DECIMAL
   * Other fields are optional and not used for this demo
 
