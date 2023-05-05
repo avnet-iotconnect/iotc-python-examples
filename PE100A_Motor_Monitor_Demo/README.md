@@ -107,8 +107,14 @@
    * ```chmod +x PE100_setup.sh```
    * ```./PE100_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A.
-      * **You may need to remove your mouse connection to free up a USB port for this**
+      * **You may need to remove your mouse connection to free up a USB port for this.**
+ 
+## Step 8: Run the Demo
+* Run this command with your IoTConnect CPID and Environment instead of the placeholders:
+```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
+   * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
+      * ```python3 PE100_Motor_Monitor_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
 
 
