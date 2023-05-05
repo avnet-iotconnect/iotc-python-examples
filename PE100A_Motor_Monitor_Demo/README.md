@@ -106,7 +106,8 @@
    * ```cd iotc-pov-engineering```
    * ```chmod +x PE100_setup.sh```
    * ```./PE100_setup.sh```
-      * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A (you may need to remove your mouse connection to free up a port for this)
+      * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A.
+      * **You may need to remove your mouse connection to free up a USB port for this**
 
 
 
