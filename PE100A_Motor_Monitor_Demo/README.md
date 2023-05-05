@@ -103,6 +103,7 @@
 * Open a terminal window and run these commands in this order:
    * ```cd /home/asus```
    * ```mkdir PE100_Demo```
+   * ```cd PE100_Demo```
    * ```git clone https://github.com/avnet-iotconnect/iotc-pov-engineering.git```
    * ```cd iotc-pov-engineering```
    * ```chmod +x PE100_setup.sh```
