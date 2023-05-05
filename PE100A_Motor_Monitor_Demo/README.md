@@ -111,8 +111,7 @@
  
 ## Step 8: Run the Demo
 * Run this command with your IoTConnect CPID and Environment instead of the placeholders:
-
-```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
+   * ```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
    * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
       * ```python3 PE100_Motor_Monitor_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
