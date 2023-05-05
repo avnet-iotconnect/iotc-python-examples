@@ -98,7 +98,7 @@
 
 * Within this "media" folder of this directory, there is a copy of the diagram (called “PE100A_Motor_Monitor_Demo_Diagram.png”) that can be downloaded for further inspection.
 
-## Step 7: IoTConnect Python SDK
+## Step 7: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```cd /home/asus```
    * ```mkdir PE100_Demo```
