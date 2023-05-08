@@ -12,11 +12,6 @@ echo "iface eth0 inet static" >> /etc/network/interfaces
 echo "        address 169.254.169.2" >> /etc/network/interfaces
 echo "        gateway 169.254.169.1" >> /etc/network/interfaces
 
-ip addr flush dev eth0
-ip addr flush dev enp1s0
-
-/etc/init.d/networking restart
-
 sudo apt install unzip nano python3-pip -y
 cd /home/asus/PE100_Demo
 wget https://help.iotconnect.io/wp-content/uploads/2023/01/iotconnect-python-sdk-v1.0.zip
@@ -37,6 +32,6 @@ cd /home/asus/PE100_Demo/iotc-pov-engineering/PE100A_Motor_Monitor_Demo/
 cp ./ADAM.py ./ModbusDevice.py ./PE100_Motor_Monitor_Demo.py /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample
 cp ./root-CA.pem /home/asus/PE100_Demo
 
-cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample
+reboot
 
 
