@@ -114,11 +114,11 @@
 * At the end of the setup script, the device will automatically reboot so the network configuration can update. 
  
 ## Step 8: Run the Demo
-* Open a terminal instance and navigate to the project sample directory with this command:
+* First, open a terminal instance and navigate to the project sample directory with this command:
 
  ```cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample```
 
-* Run this command with your IoTConnect CPID and Environment instead of the placeholders:
+* Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID and Environment:
 
 ```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
