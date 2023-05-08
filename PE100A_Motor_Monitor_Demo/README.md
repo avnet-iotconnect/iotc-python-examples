@@ -34,7 +34,7 @@
 
 <img src=".//media/image12.png"/>
 
-* Click on the “Attributes” tab below the information you just entered.
+* Next, click on the “Attributes” tab.
 
 <img src=".//media/image4.png"/>
 
