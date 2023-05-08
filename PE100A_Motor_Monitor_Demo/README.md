@@ -26,15 +26,7 @@
   * Authentication Type: Self Signed Certificate
   * Device Message Version: 2.1
 
-* Click on the "Properties" tab below the information you just entered:
-
-<img src=".//media/image11.png"/>
-
-* Update the Data Frequency to 5 seconds, and click save.
-
-<img src=".//media/image12.png"/>
-
-* Next, click on the “Attributes” tab.
+* Next, click on the “Attributes” tab below the information you just entered.
 
 <img src=".//media/image4.png"/>
 
@@ -67,6 +59,14 @@
    * Local Name: ***Attribute Name Exactly as Listed***
    * Data Type: DECIMAL
    * *Other fields are optional and not used for this demo*
+
+* Then, click on the "Properties" tab.
+
+<img src=".//media/image11.png"/>
+
+* Update the Data Frequency to 5 seconds, and click save.
+
+<img src=".//media/image12.png"/>
 
 ## Step 4: Create a Your Device in IoTConnect
 * Navigate back to the “Device” menu and click on “Create Device” in the top right corner of the screen.
