@@ -66,7 +66,7 @@ UniqueId = "PE100Demo"
 SId = ""
 
 Sdk=None
-interval = 3
+interval = 5
 directmethodlist={}
 ACKdirect=[]
 device_list=[]
