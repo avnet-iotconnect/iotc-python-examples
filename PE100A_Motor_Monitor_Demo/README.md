@@ -141,5 +141,17 @@
 
 <img src=".//media/image10.png"/>
 
+## Step 9: View the Data
+* Navigate back to the “Device” menu and select your device named "PE100Demo."
+   * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
+<img src=".//media/image13.png"/>
 
+* Next, in the vertical toolbar on the left side of the page, select "Live Data."
+
+<img src=".//media/image14.png"/>
+
+* To get a more human-friendly report of the live telemetry data, click on the "Tabular" tab.
+   * This tab allows you to scroll vertically to view previous data entires, and horizontally to see each individual attribute.
+
+<img src=".//media/image15.png"/>
