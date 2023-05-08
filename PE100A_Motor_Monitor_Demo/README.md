@@ -115,7 +115,8 @@
  
 ## Step 8: Run the Demo
 * Open a terminal instance and navigate to the project sample directory with this command:
-   * ```cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample```
+
+ ```cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample```
 
 * Run this command with your IoTConnect CPID and Environment instead of the placeholders:
 
