@@ -13,7 +13,7 @@ echo "        gateway 169.254.169.1" >> /etc/network/interfaces
 ip addr flush dev eth0
 ip addr flush dev enp1s0
 
-/etc/init.d/networking restart
+/etc/init.d/networking restart > /dev/null  2>&1
 
 sudo apt install unzip nano python3-pip -y
 cd /home/asus/PE100_Demo
