@@ -105,8 +105,7 @@
    * ```mkdir PE100_Demo```
    * ```cd PE100_Demo```
    * ```git clone https://github.com/avnet-iotconnect/iotc-pov-engineering.git```
-   * ```cd iotc-pov-engineering```
-   * ```cd PE100A_Motor_Monitor_Demo```
+   * ```cd iotc-pov-engineering/PE100A_Motor_Monitor_Demo```
    * ```chmod +x PE100_setup.sh```
    * ```./PE100_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A.
