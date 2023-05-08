@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get update
+
 echo "" >> /etc/network/interfaces
 echo "auto enp1s0" >> /etc/network/interfaces
 echo "iface enp1s0 inet dhcp" >> /etc/network/interfaces
