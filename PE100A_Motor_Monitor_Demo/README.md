@@ -110,8 +110,13 @@
    * ```./PE100_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A.
       * **You may need to remove your mouse connection to free up a USB port for this.**
+
+* At the end of the setup script, the device will automatically reboot so the network configuration can update. 
  
 ## Step 8: Run the Demo
+* Open a terminal instance and navigate to the project sample directory with this command:
+   * ```cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample```
+
 * Run this command with your IoTConnect CPID and Environment instead of the placeholders:
 
 ```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
