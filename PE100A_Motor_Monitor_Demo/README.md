@@ -26,9 +26,13 @@
   * Authentication Type: Self Signed Certificate
   * Device Message Version: 2.1
 
-* Click on the "Properties" tab below the information you just entered, update the Data Frequency to 5 seconds, and click save.
+* Click on the "Properties" tab below the information you just entered:
 
 <img src=".//media/image11.png"/>
+
+* Update the Data Frequency to 5 seconds, and click save.
+
+<img src=".//media/image12.png"/>
 
 * Click on the “Attributes” tab below the information you just entered.
 
