@@ -32,7 +32,7 @@ for opt, arg in opts:
 * sdkOptions   :: It helps to define the path of self signed and CA signed certificate as well as define the offlinne storage configuration.
 """
 
-UniqueId = "MP157FDemo"
+UniqueId = "STM32MP157"
 SId = ""
 
 Sdk=None
@@ -59,8 +59,8 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/Demo/pk_PE100_Demo.pem", 
-		"SSLCertPath" : "/home/weston/Demo/cert_PE100_Demo.crt",
+		"SSLKeyPath"  : "/home/weston/Demo/pk_STM32MP157_Test.pem", 
+		"SSLCertPath" : "/home/weston/Demo/cert_STM32MP157_Test.crt",
 		"SSLCaPath"   : "/home/weston/Demo/root-CA.pem"
         
 	},
