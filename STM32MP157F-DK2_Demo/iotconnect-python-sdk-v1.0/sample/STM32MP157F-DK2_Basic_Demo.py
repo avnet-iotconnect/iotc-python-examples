@@ -36,7 +36,7 @@ SdkOptions={
 	"certificate" : { 
 		"SSLKeyPath"  : "/home/weston/Demo/STM32MP157_Test-certificates/pk_STM32MP157_Test.pem", 
 		"SSLCertPath" : "/home/weston/Demo/STM32MP157_Test-certificates/cert_STM32MP157_Test.crt",
-		"SSLCaPath"   : "/home/weston/Demo/iotc-pov-engineering/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLCaPath"   : "/home/weston/Demo/iotc-pov-engineering-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
