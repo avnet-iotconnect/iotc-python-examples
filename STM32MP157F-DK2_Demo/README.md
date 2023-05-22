@@ -52,10 +52,10 @@
 <img src=".//media/image5.png"/>
 
 * Enter the following information and then click “Save and View”:
-   * Unique Id: PE100Demo
-   * Display Name: PE100_Demo
+   * Unique Id: STM32MP157F
+   * Display Name: STM32MP157F
    * Entity: Avnet
-   * Template: PE100_AWS_Demo
+   * Template: MP157F
  
 <img src=".//media/image6.png"/>
 
@@ -68,8 +68,8 @@
 <img src=".//media/image8.png"/>
 
 * Extract the certificate package folder and copy the individual files to a USB Storage Drive (flash drive). The files should include:
-   * pk_PE100_Demo.pem
-   * cert_PE100_Demo.crt
+   * pk_STM32MP157F.pem
+   * cert_STM32MP157F.crt
  
 **Do not create a folder on the flash drive for these files, they need to be in the outer-most directory of the drive itself.**
 
