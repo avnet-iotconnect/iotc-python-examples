@@ -109,7 +109,7 @@
 <img src=".//media/image10.png"/>
 
 ## Step 7: View the Data
-* Navigate back to the “Device” menu and select your device named "PE100Demo."
+* Navigate back to the “Device” menu and select your device named "STM32MP157F."
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
 <img src=".//media/image13.png"/>
