@@ -24,7 +24,7 @@ for opt, arg in opts:
         env = arg
 
 	
-UniqueId = "STM32MP157"
+UniqueId = "STM32MP157F"
 SId = ""
 Sdk=None
 interval = 5
@@ -34,8 +34,8 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/Demo/STM32MP157_Demo-certificates/pk_STM32MP157_Demo.pem", 
-		"SSLCertPath" : "/home/weston/Demo/STM32MP157_Demo-certificates/cert_STM32MP157_Demo.crt",
+		"SSLKeyPath"  : "/home/weston/Demo/STM32MP157-certificates/pk_STM32MP157.pem", 
+		"SSLCertPath" : "/home/weston/Demo/STM32MP157-certificates/cert_STM32MP157.crt",
 		"SSLCaPath"   : "/home/weston/Demo/iotc-pov-engineering-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
