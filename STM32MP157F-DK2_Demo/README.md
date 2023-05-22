@@ -63,15 +63,15 @@
 
 <img src=".//media/image7.png"/>
 
-* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “PE100_Demo-certificates.”
+* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “STM32MP157F-certificates.”
 
 <img src=".//media/image8.png"/>
 
-* Extract the certificate package folder and copy the individual files to a USB Storage Drive (flash drive). The files should include:
+* Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). The folder should include:
    * pk_STM32MP157F.pem
    * cert_STM32MP157F.crt
  
-**Do not create a folder on the flash drive for these files, they need to be in the outer-most directory of the drive itself.**
+**Do not the folder, it needs to keep the name “STM32MP157F-certificates.”**
 
 ## Step 5: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
