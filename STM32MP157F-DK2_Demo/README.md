@@ -1,4 +1,4 @@
-# Asus PE100A Motor Monitor Demo (For IoTConnect on AWS)
+# STM32MP157F-DK2 Demo (For IoTConnect on AWS)
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
