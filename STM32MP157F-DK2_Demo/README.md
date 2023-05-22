@@ -78,7 +78,7 @@
    * ```su```
    * ```apt-get update```
    * ```apt-get upgrade -y```
-   * ```apt-get install unzip python3-pip```
+   * ```apt-get install unzip python3-pip -y```
    * ```mkdir /home/weston/Demo```
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-pov-engineering/archive/refs/heads/main.zip```
