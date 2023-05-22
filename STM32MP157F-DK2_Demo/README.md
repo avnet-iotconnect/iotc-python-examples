@@ -63,7 +63,7 @@
 
 <img src=".//media/image7.png"/>
 
-* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “STM32MP157F-certificates.”
+* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “ST32MP157F-certificates.”
 
 <img src=".//media/image8.png"/>
 
@@ -75,29 +75,29 @@
 
 ## Step 5: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
-   * ```cd /home/asus```
-   * ```mkdir PE100_Demo```
-   * ```cd PE100_Demo```
-   * ```git clone https://github.com/avnet-iotconnect/iotc-pov-engineering.git```
-   * ```cd iotc-pov-engineering/PE100A_Motor_Monitor_Demo```
-   * ```chmod +x PE100_setup.sh```
-   * ```./PE100_setup.sh```
-      * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A.
-      * **You may need to remove your mouse connection to free up a USB port for this.**
-
-* At the end of the setup script, the device will automatically reboot so the network configuration can update. 
+   * ```su```
+   * ```apt-get update```
+   * ```apt-get upgrade -y```
+   * ```apt-get install unzip python3-pip```
+   * ```mkdir /home/weston/Demo```
+   * ```cd /home/weston/Demo```
+   * ```curl -OL https://github.com/avnet-iotconnect/iotc-pov-engineering/archive/refs/heads/main.zip```
+   * ```unzip main.zip```
+   * ```cd iotc-pov-engineering-main/STM32MP157F-DK2_Demo```
+   * ```./STM32MP157_setup.sh```
+      * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
  
 ## Step 6: Run the Demo
-* First, open a terminal instance and navigate to the project sample directory with this command:
+* To actually srat the demo, first open a terminal instance and navigate to the project sample directory with this command:
 
- ```cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample```
+ ```cd /home/weston/Demo/iotc-pov-engineering-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample```
 
 * Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID and Environment:
 
 ```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
 * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
-   * ```python3 PE100_Motor_Monitor_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
+   * ```python3 STM32MP157F-DK2_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
