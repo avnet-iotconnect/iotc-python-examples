@@ -73,19 +73,7 @@
  
 **Do not create a folder on the flash drive for these files, they need to be in the outer-most directory of the drive itself.**
 
-## Step 5: Change UART to RS-485 
-* Change the UART protocol to RS-485 by following section 3.3 of the [PE100A Software Manual](https://github.com/ASUS-IPC/ASUS-IPC/wiki/PE100A)
-   * *Note: You will have to open the PE100A and flip some dipswitches during this process*
-   * **Make sure to reboot the device after this is complete.**
-
-## Step 6: Physically Set Up Demo Hardware
-* Follow the diagram below to guide the physical setup of the demo:
-
-<img src=".//media/PE100A_Motor_Monitor_Demo_Diagram.png"/>
-
-* Within this "media" folder of this directory, there is a copy of the diagram (called “PE100A_Motor_Monitor_Demo_Diagram.png”) that can be downloaded for further inspection.
-
-## Step 7: Gather Files and Set Up Software
+## Step 5: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```cd /home/asus```
    * ```mkdir PE100_Demo```
@@ -99,7 +87,7 @@
 
 * At the end of the setup script, the device will automatically reboot so the network configuration can update. 
  
-## Step 8: Run the Demo
+## Step 6: Run the Demo
 * First, open a terminal instance and navigate to the project sample directory with this command:
 
  ```cd /home/asus/PE100_Demo/iotconnect-python-sdk-v1.0/sample```
@@ -119,7 +107,7 @@
 
 <img src=".//media/image10.png"/>
 
-## Step 9: View the Data
+## Step 7: View the Data
 * Navigate back to the “Device” menu and select your device named "PE100Demo."
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
