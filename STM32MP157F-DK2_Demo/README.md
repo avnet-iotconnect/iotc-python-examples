@@ -71,7 +71,7 @@
    * pk_STM32MP157F.pem
    * cert_STM32MP157F.crt
  
-**Do not the folder, it needs to keep the name “STM32MP157F-certificates.”**
+**Do not rename the folder, it needs to keep the name “STM32MP157F-certificates.”**
 
 ## Step 5: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
