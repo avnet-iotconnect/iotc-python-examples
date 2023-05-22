@@ -88,7 +88,7 @@
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
  
 ## Step 6: Run the Demo
-* To actually srat the demo, first open a terminal instance and navigate to the project sample directory with this command:
+* To actually start the demo, first navigate to the project sample directory with this command:
 
  ```cd /home/weston/Demo/iotc-pov-engineering-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample```
 
