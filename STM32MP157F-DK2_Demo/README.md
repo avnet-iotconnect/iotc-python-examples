@@ -1,6 +1,6 @@
 # STM32MP157F-DK2 Demo (For IoTConnect on AWS)
 
-This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) to run an IoTConnect program so that a user can monitor precise telemetry data on the online IoTConnect cloud platform using AWS in real-time. 
+This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) to run an IoTConnect program so that a user can monitor precise telemetry data in real-time on the online IoTConnect cloud platform using AWS. 
 
 For the purposes of this basic demo, the telemetry data is simple a random integer value, fittingly-dubbed "Random_Integer." More niche data coming from sensors and onboard measurements can be easily incorporated into the program as done with other Avnet IoT demos.
 
