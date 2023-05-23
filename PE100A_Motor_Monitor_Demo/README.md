@@ -1,5 +1,7 @@
 # Asus PE100A Motor Monitor Demo (For IoTConnect on AWS)
 
+This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/products/intelligent-edge-computer/PE100A/) to run an IoTConnect program so that a user can monitor motor vibration and temperature with a [Banner QM30VT2-SS-9M Vibration and Temperature Sensor](https://www.bannerengineering.com/us/en/products/part.806274.html) as well as motor current-draw with an [Automation Direct ACTR005-42L-F Current Sensor](https://www.automationdirect.com/adc/shopping/catalog/sensors_-z-_encoders/current_-a-_voltage_sensors_(ac_-a-_dc)/1-phase_ac_current_transducers/actr005-42l-f). Telemtry data is sent to the online IoTConnect cloud platform using AWS and can be viewed in real-time for precise and continuous observation.
+
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
 
