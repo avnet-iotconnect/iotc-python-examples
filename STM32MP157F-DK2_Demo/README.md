@@ -77,7 +77,10 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
  
 **Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
 
-## Step 5: Gather Files and Set Up Software
+## Step 5: Flash IoTConnect-Compatible Image to Board
+
+
+## Step 6: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```su```
    * ```apt-get update```
@@ -92,7 +95,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
  
-## Step 6: Run the Demo
+## Step 7: Run the Demo
 * To actually start the demo, first navigate to the project sample directory with this command:
 
  ```cd /home/weston/Demo/iotc-pov-engineering-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample```
@@ -112,7 +115,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 
 <img src=".//media/image10.png"/>
 
-## Step 7: View the Data
+## Step 8: View the Data
 * Navigate back to the “Device” menu and select your device named "STM32MP157F."
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
