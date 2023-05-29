@@ -91,7 +91,8 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    
       <img src=".//media/image19.png"/>
       
-   * Connect the USB-C "USB" port of your board to your PC with the included USB-C cable. If your PC does not have a USB-C port, you may use a USB-A to USB-C cable and connect it to a normal USB-A port on your PC.
+   * Connect the USB-C "USB" port of your board to your PC with the included USB-C cable.
+      * If your PC does not have a USB-C port, you may use a USB-A to USB-C cable and connect it to a normal USB-A port on your PC.
    
       <img src=".//media/image20.png"/>
 
