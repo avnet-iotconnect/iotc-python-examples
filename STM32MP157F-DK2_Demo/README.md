@@ -95,6 +95,21 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
       * If your PC does not have a USB-C port, you may use a USB-A to USB-C cable and connect it to a normal USB-A port on your PC.
    
       <img src=".//media/image20.png"/>
+      
+   * Push the "RESET" button on your board to ensure it boots into flashing mode.
+      * The LCD display of the board should be black when it has booted into flashing mode. 
+
+      <img src=".//media/image18.png"/>
+      
+   * Run the STM32CubeProgrammer software and click on the "Open file" tab.
+    
+      <img src=".//media/image21.png"/>
+      
+   * Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
+      * Select the FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv file and then click "Open."
+         * *The "...157f..." version of the file has problems so we have been instructed by ST to use the "...157c..." version.* 
+   
+      <img src=".//media/image22.png"/>
 
 ## Step 6: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
