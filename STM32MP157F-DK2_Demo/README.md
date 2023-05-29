@@ -98,8 +98,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    
    * Insert the included SD card into the SD card slot on the board.
       
-   * Push the "RESET" button on your board to ensure it boots into flashing mode.
-      * The LCD display of the board should be black when it has booted into flashing mode. 
+   * Push the "RESET" button on your board to ensure it boots into flashing mode (the LCD display of the board should be black when it has booted into flashing mode).
 
       <img src=".//media/image18.png"/>
       
