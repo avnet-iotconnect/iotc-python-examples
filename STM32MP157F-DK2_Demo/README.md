@@ -83,7 +83,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
    * You may have to create an ST account (it's free) to get access to the software download.
 * Set up the STM32MP157F-DK board for flashing:
-   * On the underside of the board, flip both of the large dipswitches to the "OFF" position.
+   * On the underside of the board, flip both of the large dipswitches (directly opposite of the HDMI port) to the "OFF" position.
   
       <img src=".//media/image16.png"/>
       
