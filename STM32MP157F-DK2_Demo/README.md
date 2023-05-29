@@ -106,8 +106,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
       <img src=".//media/image21.png"/>
       
    * Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
-      * Select the FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv file and then click "Open."
-         * *The "...157f..." version of the file has problems so we have been instructed by ST to use the "...157c..." version.* 
+      * Select the FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv file and then click "Open." (The "...157f..." version of the file has issues so we have been instructed by ST to use the "...157c..." version.)
    
       <img src=".//media/image22.png"/>
 
