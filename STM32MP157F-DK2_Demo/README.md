@@ -78,8 +78,22 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 **Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
 
 ## Step 5: Flash IoTConnect-Compatible Image to Board
-* To download the zipped image folder, copy and paste this URL into a new internet brower window and hit ENTER:
-   * [click here](https://github.com/avnet-iotconnect/iotc-pov-engineering/raw/main/STM32MP157F-DK2_Demo/OpenSTLinux_IoTConnect_Compatible.zip)
+* To download the zipped image folder, [click here](https://github.com/avnet-iotconnect/iotc-pov-engineering/raw/main/STM32MP157F-DK2_Demo/OpenSTLinux_IoTConnect_Compatible.zip).
+* Unzip the folder to a known location.
+* Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
+   * You may have to create an ST account (it's free) to get access to the software download.
+* Set up the STM32MP157F-DK board for flashing:
+   * On the underside of the board, flip both of the large dipswitches to the "OFF" position.
+  
+      <img src=".//media/image16.png"/>
+      
+   * Power the board with a USB-C cable connected to the "PWR_IN" USB-C port connected to a 5VDC supply with at least 1.0A of output.
+   
+      <img src=".//media/image19.png"/>
+      
+   * Connect the USB-C "USB" port of your board to your PC with the included USB-C cable. If your PC does not have a USB-C port, you may use a USB-A to USB-C cable and connect it to a normal USB-A port on your PC.
+   
+      <img src=".//media/image20.png"/>
 
 ## Step 6: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
