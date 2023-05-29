@@ -95,20 +95,61 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
       * If your PC does not have a USB-C port, you may use a USB-A to USB-C cable and connect it to a normal USB-A port on your PC.
    
       <img src=".//media/image20.png"/>
+   
+   * Insert the included SD card into the SD card slot on the board.
       
    * Push the "RESET" button on your board to ensure it boots into flashing mode.
       * The LCD display of the board should be black when it has booted into flashing mode. 
 
       <img src=".//media/image18.png"/>
       
-   * Run the STM32CubeProgrammer software and click on the "Open file" tab.
+* Run the STM32CubeProgrammer software and click on the "Open file" tab.
     
       <img src=".//media/image21.png"/>
       
-   * Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
-      * Select the FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv file and then click "Open." (The "...157f..." version of the file has issues so we have been instructed by ST to use the "...157c..." version.)
+* Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
+   * Select the FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv file and then click "Open." 
+      * The "...157f..." version of the file has issues so we have been instructed by ST to use the "...157c..." version.
    
       <img src=".//media/image22.png"/>
+      
+* Next, click on the "Browse" button to select the binaries path.
+   
+      <img src=".//media/image23.png"/>
+   
+* Navigate once again to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1
+   * Select the stm32mp1 folder and then click "Select folder."
+
+      <img src=".//media/image24.png"/>
+      
+* Back in the STM32CubeProgrammer window, on the right-hand side of the screen, if the "Port" is listed as "No DFU...," make sure your USB cable is connected both to your PC and the board, and then click the revolving arrows icon.
+
+     <img src=".//media/image25.png"/>
+     
+* When the device is recognized by the software, the port listing will be "USB" followed by a number, such as 1. The serial number of your board should also be listed beneath the port name.
+
+    <img src=".//media/image26.png"/>
+    
+* You are ready to flash. Click the "Download" button to begin the flashing process.
+   * The STM32MP157F-DK2 will turn off and on several times throughout the flashing process. It is important to not unplug or disturb it during the process. Given the size of the image it will usually take **between 30 and 45 minutes** to flash.
+   * It is worth noting that the LCD screen on the board will turn on with some output text during the flash process, so do not be alarmed.
+
+   <img src=".//media/image27.png"/>
+   
+* When the flash has completed successfully, this pop-up in the STM32CubeProgrammer window will appear.
+
+   <img src=".//media/image28.png"/>
+   
+* Now, flip the large dipswitches on the underside of your board both to the "ON" position, and once again hit the reset button to properly boot the new image from the SD card.
+
+   <img src=".//media/image17.png"/>
+   
+* For the first boot after flashing, the board takes a few minutes to turn on.
+
+* To complete the setup process:
+   * Connect the ethernet port of your board to your internet router using an ethernet cable.
+   * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
+   * Optionally, you may connect the board to an external monitor using the HMDI port. 
 
 ## Step 6: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
