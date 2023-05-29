@@ -143,7 +143,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 
 <img src=".//media/image17.png"/>
    
-* For the first boot after flashing, the board takes a few minutes to turn on.
+* **For the first boot after flashing, the board takes a few minutes to turn on.**
 
 * To complete the setup process:
    * Connect the ethernet port of your board to your internet router using an ethernet cable.
