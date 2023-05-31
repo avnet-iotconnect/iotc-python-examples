@@ -142,9 +142,15 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 
 <img src=".//media/image28.png"/>
    
-* Now, flip the large dipswitches on the underside of your board both to the "ON" position, and once again hit the reset button to properly boot the new image from the SD card.
+* Now, flip the boot dipswitches on the underside of your board both to these positions:
+   * 1: Open
+   * 2: Open
+   * 3: Open
+   * 4: Open
 
 <img src=".//media/image17.png"/>
+
+* Once again, hit the reset button to properly boot the new image from the SD card.
    
 * **For the first boot after flashing, the board may take a few minutes to turn on.**
 
