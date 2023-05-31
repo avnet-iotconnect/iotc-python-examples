@@ -84,9 +84,9 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    * You may have to create an ST account (it's free) to get access to the software download.
 * Set up the STM32MP135F-DK board for flashing:
    * Near the bottom of the board, flip the dipswitches in this fashion:
-      * 1: Open
+      * 1: Closed
       * 2: Open
-      * 3: Open
+      * 3: Closed
       * 4: Open
   
       <img src=".//media/image16.png"/>
