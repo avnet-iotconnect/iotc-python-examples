@@ -175,7 +175,8 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 ```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
 * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
-   * ```python3 STM32MP157F-DK2_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
+
+```python3 STM32MP157F-DK2_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
