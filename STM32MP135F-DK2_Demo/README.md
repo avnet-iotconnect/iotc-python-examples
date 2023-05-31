@@ -151,7 +151,6 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 * To complete the setup process:
    * Connect the ethernet port of your board to your internet router using an ethernet cable.
    * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
-   * Optionally, you may connect the board to an external monitor using the HMDI port. 
 
 ## Step 6: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
