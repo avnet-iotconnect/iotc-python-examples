@@ -1,6 +1,6 @@
-# STM32MP157F-DK2 Demo (For IoTConnect on AWS)
+# STM32MP135F-DK2 Demo (For IoTConnect on AWS)
 
-This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
+This demo uses an [Discovery kit with STM32MP135F MPU](https://www.st.com/en/evaluation-tools/stm32mp135f-dk.html) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
 
 For the purposes of this basic demo, the telemetry data is simple a random integer value, fittingly-dubbed "Random_Integer." More niche data coming from sensors and onboard measurements can be easily incorporated into the program as done with other Avnet IoT demos.
 
@@ -25,8 +25,8 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 <img src=".//media/image3.png"/>
 
 * Enter the following information into the Template creation page and click “Save”:
-  * Template Code: MP157F
-  * Template Name: MP157F
+  * Template Code: MP135F
+  * Template Name: MP135F
   * Authentication Type: Self Signed Certificate
   * Device Message Version: 2.1
 
@@ -56,10 +56,10 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 <img src=".//media/image5.png"/>
 
 * Enter the following information and then click “Save and View”:
-   * Unique Id: STM32MP157F
-   * Display Name: STM32MP157F
+   * Unique Id: STM32MP135F
+   * Display Name: STM32MP135F
    * Entity: Avnet
-   * Template: MP157F
+   * Template: MP135F
  
 <img src=".//media/image6.png"/>
 
@@ -67,23 +67,27 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 
 <img src=".//media/image7.png"/>
 
-* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “ST32MP157F-certificates.”
+* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “ST32MP135F-certificates.”
 
 <img src=".//media/image8.png"/>
 
 * Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). The folder should include:
-   * pk_STM32MP157F.pem
-   * cert_STM32MP157F.crt
+   * pk_STM32MP135F.pem
+   * cert_STM32MP135F.crt
  
-**Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
+**Do not rename the folder, it needs to keep the name “STM32MP135F-certificates” in order to work properly.**
 
 ## Step 5: Flash IoTConnect-Compatible Image to Board
 * To download the zipped image folder, [click here](https://github.com/avnet-iotconnect/iotc-pov-engineering/raw/main/STM32MP157F-DK2_Demo/OpenSTLinux_IoTConnect_Compatible.zip).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
    * You may have to create an ST account (it's free) to get access to the software download.
-* Set up the STM32MP157F-DK board for flashing:
-   * On the underside of the board, flip both of the large dipswitches (directly opposite of the HDMI port) to the "OFF" position.
+* Set up the STM32MP135F-DK board for flashing:
+   * Near the bottom of the board, flip the dipswitches in this fashion:
+      * 1: Open
+      * 2: Open
+      * 3: Open
+      * 4: Open
   
       <img src=".//media/image16.png"/>
       
