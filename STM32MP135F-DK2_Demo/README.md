@@ -133,7 +133,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 <img src=".//media/image26.png"/>
     
 * You are ready to flash. Click the "Download" button to begin the flashing process.
-   * The STM32MP157F-DK2 will turn off and on several times throughout the flashing process. It is important to not unplug or disturb it during the process. Given the size of the image it will usually take **between 30 and 45 minutes** to flash.
+   * The STM32MP135F-DK2 will turn off and on several times throughout the flashing process. It is important to not unplug or disturb it during the process. Given the size of the image it will usually take **between 30 and 45 minutes** to flash.
    * It is worth noting that the LCD screen on the board will turn on with some output text during the flash process, so do not be alarmed.
 
 <img src=".//media/image27.png"/>
