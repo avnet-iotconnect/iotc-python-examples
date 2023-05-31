@@ -149,7 +149,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 * **For the first boot after flashing, the board may take a few minutes to turn on.**
 
 * To complete the setup process:
-   * Connect the ethernet port of your board to your internet router using an ethernet cable.
+   * Connect an ethernet port of your board to your internet router using an ethernet cable.
    * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
 
 ## Step 6: Gather Files and Set Up Software
