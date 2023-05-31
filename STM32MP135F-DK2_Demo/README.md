@@ -176,7 +176,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 ## Step 7: Run the Demo
 * To actually start the demo, first navigate to the project sample directory with this command:
 
- ```cd /home/weston/Demo/iotc-pov-engineering-main/STM32MP135F-DK2_Demo/iotconnect-python-sdk-v1.0/sample```
+ ```cd iotconnect-python-sdk-v1.0/sample```
 
 * Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID and Environment:
 
