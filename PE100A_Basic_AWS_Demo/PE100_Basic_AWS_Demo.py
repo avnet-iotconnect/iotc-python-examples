@@ -62,8 +62,8 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/asus/PE100_Demo/pk_PE100_Demo.pem", 
-		"SSLCertPath" : "/home/asus/PE100_Demo/cert_PE100_Demo.crt",
+		"SSLKeyPath"  : "/home/asus/PE100_Demo/PE100_Demo-certificates/pk_PE100_Demo.pem", 
+		"SSLCertPath" : "/home/asus/PE100_Demo/PE100_Demo-certificates/cert_PE100_Demo.crt",
 		"SSLCaPath"   : "/home/asus/PE100_Demo/root-CA.pem"
         
 	},
