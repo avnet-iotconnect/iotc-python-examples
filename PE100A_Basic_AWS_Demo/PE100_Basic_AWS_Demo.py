@@ -263,14 +263,6 @@ def main():
                         "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
                         "data": data
                     }]
-                    
-                    
-                    """
-                    * Add your device attributes and respective value here as per standard format defined in sdk documentation
-                    * "time" : Date format should be as defined //"2021-01-24T10:06:17.857Z" 
-                    * "data" : JSON data type format // {"temperature": 15.55, "gyroscope" : { 'x' : -1.2 }}
-                    """
- 
                     sendBackToSDK(Sdk, dObj)
                     
             except KeyboardInterrupt:
