@@ -7,7 +7,6 @@ from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
 import getopt
-import signal
 
 cpid = ""
 env = ""
