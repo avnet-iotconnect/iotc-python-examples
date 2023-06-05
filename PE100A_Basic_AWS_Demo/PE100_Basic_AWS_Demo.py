@@ -6,7 +6,6 @@ import random
 from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
-import minimalmodbus
 import getopt
 import signal
 
