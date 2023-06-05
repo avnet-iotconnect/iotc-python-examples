@@ -9,8 +9,6 @@ import os
 import minimalmodbus
 import getopt
 import signal
-from ModbusDevice import ModbusDevice
-from ADAM import *
 
 cpid = ""
 env = ""
@@ -26,31 +24,6 @@ for opt, arg in opts:
         cpid = arg
     elif opt == '-e':
         env = arg
-
-PORT = '/dev/ttymxc1'
-
-instrument = minimalmodbus.Instrument(PORT, 1, minimalmodbus.MODE_RTU)
-
-instrument.serial.baudrate = 19200
-instrument.serial.bytesize = 8
-instrument.serial.parity = minimalmodbus.serial.PARITY_NONE
-instrument.serial.stopbits = 1
-instrument.serial.timeout = 1
-
-instrument.close_port_after_each_call = True
-instrument.clear_buffers_before_each_transaction = True
-
-#Setting up connection to ADAM-6017 device
-adam_ip="169.254.169.108"
-adam_port=502
-adam = None
-adam = ADAM6017(adam_ip, adam_port)
-if(adam.connect()==False):
-    print("Error connecting to ip %s" % adam_ip)
-if(adam.confirm_device()==False):
-    print("ADAM-6017 device not valid!")
-adam.write_channel_typecode(0,0x0180);
-
 
 """
 * ## Prerequisite parameter to run this sampel code
@@ -284,32 +257,7 @@ def main():
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
-                    
-                    data = {
-                    "z_rms_velo_in_sec": instrument.read_register(2400,4),
-                    "z_rms_velo_mm_sec": instrument.read_register(2402,3),
-                    "temp_c": instrument.read_register(42,2),
-                    "temp_f": instrument.read_register(48,2),
-                    "x_rms_velo_in_sec": instrument.read_register(2450,4),
-                    "x_rms_velo_mm_sec": instrument.read_register(2452,3),
-                    "z_peak_accel_g": instrument.read_register(2406,3),
-                    "x_peak_accel_g": instrument.read_register(2456,3),
-                    "z_peak_velo_frq": instrument.read_register(2404,1),
-                    "x_peak_velo_frq": instrument.read_register(2454,1),
-                    "z_rms_accel_g": instrument.read_register(2405,3),
-                    "x_rms_accel_g": instrument.read_register(2455,3),
-                    "z_kurtosis": instrument.read_register(2408,3),
-                    "x_kurtosis": instrument.read_register(2458,3),
-                    "z_crest_fact": instrument.read_register(2407,3),
-                    "x_crest_fact": instrument.read_register(2457,3),
-                    "z_peak_velo_in_sec": instrument.read_register(2401,4),
-                    "z_peak_velo_mm_sec": instrument.read_register(2403,3),
-                    "x_peak_velo_in_sec": instrument.read_register(2451,4),
-                    "x_peak_velo_mm_sec": instrument.read_register(2453,3),
-                    "z_high_frq_rms_accel_g": instrument.read_register(2409,3),
-                    "x_high_frq_rms_accel_g": instrument.read_register(2459,3),
-                    "ac_current_amps": (adam.convert_uint(adam.read_channel(0), 4, 20) - 4)/8.0
-                        }
+                    data = {"Random_Integer": random.randint(1,100)}
                     dObj = [{
                         "uniqueId": UniqueId,
                         "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
