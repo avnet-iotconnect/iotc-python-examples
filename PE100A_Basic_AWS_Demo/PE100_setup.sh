@@ -10,7 +10,7 @@ cd iotconnect-python-sdk-v1.0
 pip3 install iotconnect-sdk-1.0.tar.gz
 
 sudo mkdir /media/usbdrive
-echo -e "Please insert your flash drive with your certificates folder into a USB port on this device, and then hit ENTER. "
+echo -e "Please insert your flash drive with your certificates folder into a USB port on this device, wait 5 seconds, and then hit ENTER. "
 read input
 sudo mount /dev/sda1 /media/usbdrive || sudo mount /dev/sdb1 /media/usbdrive
 
