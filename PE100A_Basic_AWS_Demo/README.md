@@ -1,8 +1,8 @@
-# Asus PE100A Motor Monitor Demo (For IoTConnect on AWS)
+# Asus PE100A Basic Demo (For IoTConnect on AWS)
 
-This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/products/intelligent-edge-computer/PE100A/) to run an IoTConnect program to monitor motor vibration and temperature with a [Banner QM30VT2-SS-9M Vibration and Temperature Sensor](https://www.bannerengineering.com/us/en/products/part.806274.html) as well as AC current-draw with an [Automation Direct ACTR005-42L-F Current Sensor](https://www.automationdirect.com/adc/shopping/catalog/sensors_-z-_encoders/current_-a-_voltage_sensors_(ac_-a-_dc)/1-phase_ac_current_transducers/actr005-42l-f). Telemetry data is sent to the online IoTConnect cloud platform using AWS and can be viewed in real-time for precise and continuous observation. 
+This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/products/intelligent-edge-computer/PE100A/) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
 
-For the purposes of reliably showcasing a broad range of motor health states, instead of a conventional electric motor the sensors are monitoring an [electromagnetic vibration plate](https://www.amazon.com/dp/B08CZ8BSMG?ref=ppx_yo2ov_dt_b_product_details&th=1) that has adjustable vibration amplitude which also causes higher current-draw and temperatures. To observe more extreme temperature changes with this demo, external heating or cooling sources can easily be introduced.
+For the purposes of this basic demo, the telemetry data is simple a random integer value, fittingly-dubbed "Random_Integer." More niche data coming from sensors and onboard measurements can be easily incorporated into the program as done with other Avnet IoT demos.
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
@@ -33,35 +33,10 @@ For the purposes of reliably showcasing a broad range of motor health states, in
 * Next, click on the “Attributes” tab below the information you just entered.
 
 <img src=".//media/image4.png"/>
-
-* For each of these attributes:
-  * z_rms_velo_in_sec
-  * z_rms_velo_mm_sec
-  * temp_c
-  * temp_f
-  * x_rms_velo_in_sec
-  * x_rms_velo_mm_sec
-  * z_peak_accel_g
-  * x_peak_accel_g
-  * z_peak_velo_frq
-  * x_peak_velo_frq
-  * z_rms_accel_g
-  * x_rms_accel_g
-  * z_kurtosis
-  * x_kurtosis
-  * z_crest_fact
-  * x_crest_fact
-  * z_peak_velo_in_sec
-  * z_peak_velo_mm_sec
-  * x_peak_velo_in_sec
-  * x_peak_velo_mm_sec
-  * z_high_frq_rms_accel_g
-  * x_high_frq_rms_accel_g
-  * ac_current_amps
  
 * Enter the following information and click “Save”:
-   * Local Name: ***Attribute Name Exactly as Listed***
-   * Data Type: DECIMAL
+   * Local Name: Random_Integer
+   * Data Type: INTEGER
    * *Other fields are optional and not used for this demo*
 
 * Then, click on the "Properties" tab.
@@ -93,31 +68,19 @@ For the purposes of reliably showcasing a broad range of motor health states, in
 
 <img src=".//media/image8.png"/>
 
-* Extract the certificate package folder and copy the individual files to a USB Storage Drive (flash drive). The files should include:
+* Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). The folder should include:
    * pk_PE100_Demo.pem
    * cert_PE100_Demo.crt
  
-**Do not create a folder on the flash drive for these files, they need to be in the outer-most directory of the drive itself.**
+**Do not rename the folder, it needs to keep the name “STM32MP135F-certificates” in order to work properly.**
 
-## Step 5: Change UART to RS-485 
-* Change the UART protocol to RS-485 by following section 3.3 of the [PE100A Software Manual](https://github.com/ASUS-IPC/ASUS-IPC/wiki/PE100A)
-   * *Note: You will have to open the PE100A and flip some dipswitches during this process*
-   * **Make sure to reboot the device after this is complete.**
-
-## Step 6: Physically Set Up Demo Hardware
-* Follow the diagram below to guide the physical setup of the demo:
-
-<img src=".//media/PE100A_Motor_Monitor_Demo_Diagram.png"/>
-
-* Within this "media" folder of this directory, there is a copy of the diagram (called “PE100A_Motor_Monitor_Demo_Diagram.png”) that can be downloaded for further inspection.
-
-## Step 7: Gather Files and Set Up Software
+## Step 5: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```cd /home/asus```
    * ```mkdir PE100_Demo```
    * ```cd PE100_Demo```
    * ```git clone https://github.com/avnet-iotconnect/iotc-pov-engineering.git```
-   * ```cd iotc-pov-engineering/PE100A_Motor_Monitor_Demo```
+   * ```cd iotc-pov-engineering/PE100A_Basic_AWS_Demo```
    * ```chmod +x PE100_setup.sh```
    * ```./PE100_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the PE100A.
@@ -132,7 +95,7 @@ For the purposes of reliably showcasing a broad range of motor health states, in
 
 * Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID and Environment:
 
-```python3 PE100_Motor_Monitor_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
+```python3 PE100_Basic_AWS_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
 * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
    * ```python3 PE100_Motor_Monitor_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
