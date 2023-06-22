@@ -78,7 +78,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 **Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
 
 ## Step 5: Flash IoTConnect-Compatible Image to Board
-* To download the zipped image folder, [click here](https://github.com/avnet-iotconnect/iotc-pov-engineering/raw/main/STM32MP157F-DK2_Demo/OpenSTLinux_IoTConnect_Compatible.zip).
+* To download the zipped image folder, [click here](https://ln5.sync.com/dl/fd0051950/4qnh3efg-2wauv97s-pzkfbf5w-4bsuucs2).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
    * You may have to create an ST account (it's free) to get access to the software download.
