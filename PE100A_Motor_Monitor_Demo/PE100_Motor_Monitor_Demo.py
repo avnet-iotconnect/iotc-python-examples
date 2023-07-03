@@ -26,6 +26,8 @@ for opt, arg in opts:
         cpid = arg
     elif opt == '-e':
         env = arg
+    else:
+	raise Exception("Invalid option.")
 
 PORT = '/dev/ttymxc1'
 
