@@ -1,15 +1,21 @@
 # Asus PE100A Basic Demo (For IoTConnect on AWS)
 
-This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/products/intelligent-edge-computer/PE100A/) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
+This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/products/intelligent-edge-computer/PE100A/) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using both AWS and Azure. 
 
 For the purposes of this basic demo, the telemetry data is simple a random integer value, fittingly-dubbed "Random_Integer." More niche data coming from sensors and onboard measurements can be easily incorporated into the program as done with other Avnet IoT demos.
+
+Throughout this demo, many steps will have an AWS and an Azure option. You may choose to implement both, or just one of the two depending on your use-case.
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
 
 ## Step 2: Sign in to IoTConnect Account
+### AWS
 * Navigate to https://awspoc.iotconnect.io/ and enter your account credentials.
    * This should bring you to your AWS IoTConnect Dashboard.
+### Azure
+* Navigate to https://avnet.iotconnect.io/ and enter your account credentials.
+   * This should bring you to your Azure IoTConnect Dashboard. 
 
 ## Step 3: Create a Template for Your Device 
 * On the far-left side of the screen is a navy-blue toolbar, hover your cursor over the icon that looks like a processor chip and choose “Device” out of the dropdown options (shown below). 
