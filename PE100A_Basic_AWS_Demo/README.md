@@ -72,7 +72,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    * pk_PE100_Demo.pem
    * cert_PE100_Demo.crt
  
-**Do not rename the folder, it needs to keep the name “STM32MP135F-certificates” in order to work properly.**
+**Do not rename the folder, it needs to keep the name “PE100_Demo-certificates” in order to work properly.**
 
 ## Step 5: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
