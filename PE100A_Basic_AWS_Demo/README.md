@@ -4,7 +4,7 @@ This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/p
 
 For the purposes of this basic demo, the telemetry data is simple a random integer value, fittingly-dubbed "Random_Integer." More niche data coming from sensors and onboard measurements can be easily incorporated into the program as done with other Avnet IoT demos.
 
-Throughout this demo, many steps will have an AWS and an Azure option. You may choose to implement both, or just one of the two depending on your use-case.
+This documentation is written to guide users through the demo setup on both the AWS and Azure platforms. The processes are mostly the same, but parts of some steps will diverge to have an AWS and an Azure option. Choose the correct option for your use case, or both if you are running a demo on each platform.
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
@@ -32,7 +32,7 @@ Throughout this demo, many steps will have an AWS and an Azure option. You may c
 
 * Enter the following information into the Template creation page and click “Save”:
   * Template Code: PE100
-  * Template Name: PE100_AWS_Demo
+  * Template Name: PE100_Demo
   * Authentication Type: Self Signed Certificate
   * Device Message Version: 2.1
 
@@ -49,7 +49,7 @@ Throughout this demo, many steps will have an AWS and an Azure option. You may c
 
 <img src=".//media/image11.png"/>
 
-* Update the Data Frequency to 5 seconds, and click save.
+* Make sure the Data Frequency is set to 60 seconds, and click save.
 
 <img src=".//media/image12.png"/>
 
