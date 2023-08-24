@@ -160,7 +160,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-pov-engineering/archive/refs/heads/main.zip```
    * ```unzip main.zip```
-   * ```cd iotc-pov-engineering-main/STM32MP157F-DK2_Demo```
+   * ```cd iotc-python-examples-main/STM32MP157F-DK2_Demo```
    * ```chmod +x STM32MP157_setup.sh```
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
