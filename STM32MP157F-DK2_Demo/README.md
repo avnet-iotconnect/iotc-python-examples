@@ -158,7 +158,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    * ```apt-get install unzip python3-pip -y```
    * ```mkdir /home/weston/Demo```
    * ```cd /home/weston/Demo```
-   * ```curl -OL https://github.com/avnet-iotconnect/iotc-pov-engineering/archive/refs/heads/main.zip```
+   * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
    * ```unzip main.zip```
    * ```cd iotc-python-examples-main/STM32MP157F-DK2_Demo```
    * ```chmod +x STM32MP157_setup.sh```
