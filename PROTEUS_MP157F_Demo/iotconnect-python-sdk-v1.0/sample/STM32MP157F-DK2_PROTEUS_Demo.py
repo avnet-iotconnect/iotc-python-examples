@@ -31,7 +31,7 @@ for opt, arg in opts:
 UniqueId = "STM32MP157F"
 SId = ""
 Sdk=None
-interval = 5
+interval = 60
 directmethodlist={}
 ACKdirect=[]
 device_list=[]
@@ -40,7 +40,7 @@ SdkOptions={
 	"certificate" : { 
 		"SSLKeyPath"  : "/home/weston/Demo/STM32MP157F-certificates/pk_STM32MP157F.pem", 
 		"SSLCertPath" : "/home/weston/Demo/STM32MP157F-certificates/cert_STM32MP157F.crt",
-		"SSLCaPath"   : "/home/weston/Demo/iotc-python-examples-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLCaPath"   : "/home/weston/Demo/iotc-python-examples-main/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
