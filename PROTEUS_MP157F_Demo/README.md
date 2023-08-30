@@ -4,7 +4,9 @@ This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/eva
 
 For this demo, predictive motor maintenance data is being collected via bluetooth (BLE) from an [STEVAL-PROTEUS1 Industrial Evaluation Sensor](https://www.st.com/en/evaluation-tools/steval-proteus1.html). This data includes vibration speed, acceleration, and frequency data that can be used to monitor the health of field machines from anywhere with an internet connection.
 
-<img src=".//media/image33.png"/> <img src=".//media/image34.png"/>
+<img src=".//media/image33.png"/> 
+
+<img src=".//media/image34.png"/>
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
