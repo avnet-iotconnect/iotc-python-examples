@@ -111,9 +111,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image21.png"/>
       
-* Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
-   * Select the FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv file and then click "Open." 
-      * The "...157f..." version of the file has issues so we have been instructed by ST to use the "...157c..." version.
+* Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OSTL_6.1_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
+   * Select the FlashLayout_sdcard_stm32mp157F-dk2-optee.tsv file and then click "Open." 
    
 <img src=".//media/image22.png"/>
       
@@ -121,7 +120,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    
 <img src=".//media/image23.png"/>
    
-* Navigate once again to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1
+* Navigate once again to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OSTL_6.1_IoTConnect_Compatible\images\stm32mp1
    * Select the stm32mp1 folder and then click "Select folder."
 
 <img src=".//media/image24.png"/>
