@@ -4,9 +4,9 @@ This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/eva
 
 For this demo, predictive motor maintenance data is being collected via bluetooth (BLE) from an [STEVAL-PROTEUS1 Industrial Evaluation Sensor](https://www.st.com/en/evaluation-tools/steval-proteus1.html). This data includes vibration speed, acceleration, and frequency data that can be used to monitor the health of field machines from anywhere with an internet connection.
 
-<img src=".//media/image33.png"/> 
+<img src=".//media/image34.png"/> 
 
-<img src=".//media/image34.png"/>
+<img src=".//media/image33.png"/>
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
@@ -82,8 +82,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * At this point, your PROTEUS sensor kit is ready for use.
 
-## Step 6: Flash IoTConnect-Compatible Image to Board
-* To download the zipped image folder, [click here](https://ln5.sync.com/dl/fd0051950/4qnh3efg-2wauv97s-pzkfbf5w-4bsuucs2).
+## Step 6: Flash IoTConnect-Compatible Image to STM32MP157F-DK2 Board
+* To download the zipped image folder, [click here](https://ln5.sync.com/dl/b769f14a0/wktj6ejh-6q6vz6u8-ki7u9cvb-ng4zxqup).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
    * You may have to create an ST account (it's free) to get access to the software download.
