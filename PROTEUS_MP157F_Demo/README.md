@@ -4,6 +4,8 @@ This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/eva
 
 For this demo, predictive motor maintenance data is being collected via bluetooth (BLE) from an [STEVAL-PROTEUS1 Industrial Evaluation Sensor](https://www.st.com/en/evaluation-tools/steval-proteus1.html). This data includes vibration speed, acceleration, and frequency data that can be used to monitor the health of field machines from anywhere with an internet connection.
 
+<img src=".//media/image33.png"/> <img src=".//media/image34.png"/>
+
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
 
@@ -68,7 +70,15 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 **Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
 
 ## Step 5: PROTEUS Sensor Setup
-*TBD
+* For assembly, follow section 4.1 in the provided [getting started document](https://www.st.com/resource/en/user_manual/um3000-getting-started-with-the-stevalproteus1-evaluation-kit-for-condition-monitoring-based-on-the-24-ghz-stm32wb5mmg-module-stmicroelectronics.pdf) for the PROTEUS. Getting the battery connector to solidly seat into its slot on the main board is a bit tricky, so make sure you take your time on that step.
+  
+* After the sensor kit is assembled, power the board with a Micro-USB cable. While the device has a battery, its level of charge when it comes from the manufacturer can vary.
+
+* Using a small flathead screwdriver (the kind you might use to repair a set of eyeglasses), a straightened paperclip, or some type of small blunt pin, press and hold the S2 power switch down for 3 seconds. If you have the device sitting right-side-up on a desk with the Micro-USB connector facing to your left, the S2 button will be accessed through the only slot in the plastic casing that is facing you.
+
+<img src=".//media/image35.png"/>
+
+* At this point, your PROTEUS sensor kit is ready for use.
 
 ## Step 6: Flash IoTConnect-Compatible Image to Board
 * To download the zipped image folder, [click here](https://ln5.sync.com/dl/fd0051950/4qnh3efg-2wauv97s-pzkfbf5w-4bsuucs2).
