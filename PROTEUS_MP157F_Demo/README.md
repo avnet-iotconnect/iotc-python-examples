@@ -1,8 +1,8 @@
-# STM32MP157F-DK2 Demo (For IoTConnect on AWS)
+# PROTEUS / STM32MP157F-DK2 Demo (For IoTConnect on AWS)
 
 This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
 
-For the purposes of this basic demo, the telemetry data is simple a random integer value, fittingly-dubbed "Random_Integer." More niche data coming from sensors and onboard measurements can be easily incorporated into the program as done with other Avnet IoT demos.
+For this demo, predictive motor maintenance data is being collected via bluetooth (BLE) from an [STEVAL-PROTEUS1 Industrial Evaluation Sensor](https://www.st.com/en/evaluation-tools/steval-proteus1.html). This data includes vibration speed, acceleration, and frequency data that can be used to monitor the health of field machines from anywhere with an internet connection.
 
 ## Step 1: Make an IoTConnect Account
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
