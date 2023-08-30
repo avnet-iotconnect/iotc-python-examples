@@ -160,12 +160,12 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * ```su```
    * ```apt-get update```
    * ```apt-get upgrade -y```
-   * '''dd if=/dev/zero of=/swapfile bs=1024 count=1048576'''
-   * '''chmod 600 /swapfile'''
-   * '''mkswap /swapfile'''
-   * '''swapon /swapfile'''
+   * ```dd if=/dev/zero of=/swapfile bs=1024 count=1048576```
+   * ```chmod 600 /swapfile```
+   * ```mkswap /swapfile```
+   * ```swapon /swapfile```
    * ```apt-get install unzip python3-pip -y```
-   * '''pip3 install bleak'''
+   * ```pip3 install bleak```
    * ```mkdir /home/weston/Demo```
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
@@ -182,11 +182,11 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID and Environment:
 
-```python3 STM32MP157F-DK2_Basic_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
+```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
 * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
 
-```python3 STM32MP157F-DK2_Basic_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
+```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
