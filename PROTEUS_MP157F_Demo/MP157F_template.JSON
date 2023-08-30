@@ -1,0 +1,180 @@
+{
+    "code": "MP157F",
+    "name": "MP157F",
+    "authType": 3,
+    "isIotEdgeEnable": false,
+    "attributes": [
+        {
+            "name": "accel_x_mGs",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_y_mGs",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_z_mGs",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "gyro_x_dps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "gyro_y_dps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "gyro_z_dps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_status_x",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_status_y",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_status_z",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_x_mmps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_y_mmps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_z_mmps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_status_x",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_status_y",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_status_z",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_x_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_y_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_z_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_status_x",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_status_y",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_status_z",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_x_hz",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_y_hz",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_z_hz",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_max_amp_x_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_max_amp_y_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_max_amp_z_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        }
+    ],
+    "messageVersion": "2.1",
+    "msgCode": "XG4E2ZT",
+    "properties": {
+        "description": null,
+        "dataFrequency": "5",
+        "fileSupport": false
+    },
+    "_meta": {
+        "version": "2.0"
+    }
+}
