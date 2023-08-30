@@ -3,7 +3,7 @@
 cd iotconnect-python-sdk-v1.0
 cd iotconnect-sdk-1.0
 pip3 install --user .
-cd /home/weston/Demo/iotc-pov-engineering-main/STM32MP157F-DK2_Demo/iotconnect-python-sdk-v1.0/sample
+cd /home/weston/Demo/iotc-python-examples-main/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample
 mkdir /media/usbdrive
 echo -e "Please insert your flash drive with your certificates folder into a USB port on this device, wait 5 seconds, and then hit ENTER. "
 read input
