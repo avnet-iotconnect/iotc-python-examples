@@ -12,6 +12,14 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * This should bring you to your AWS IoTConnect Dashboard.
 
 ## Step 3: Import a Template for Your Device 
+* Within this git repo, navigate to the PROTEUS_MP157F_Demo directory and click on the file called MP157F_template.JSON.
+
+<img src=".//media/image31.png"/>
+
+* Download the template file to your PC by clicking on the download button for the file, shown below.
+
+<img src=".//media/image29.png"/>
+  
 * On the far-left side of the screen is a navy-blue toolbar, hover your cursor over the icon that looks like a processor chip and choose “Device” out of the dropdown options (shown below). 
 
 <img src=".//media/image1.png"/>
@@ -24,31 +32,13 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image3.png"/>
 
-* Enter the following information into the Template creation page and click “Save”:
-  * Template Code: MP157F
-  * Template Name: MP157F
-  * Authentication Type: Self Signed Certificate
-  * Device Message Version: 2.1
+* In the upper-right area of the scree, click on the "Import" button.
 
-* Next, click on the “Attributes” tab below the information you just entered.
+<img src=".//media/image30.png"/>
 
-<img src=".//media/image4.png"/>
+* In the resulting pop-up window, click on the "Browse" button, navigate to where you have the template file downloaded, and select the template file. Click on the "Save" button afterwards.
 
-* For each of these attributes:
-  * Random_Integer
- 
-* Enter the following information and click “Save”:
-   * Local Name: ***Attribute Name Exactly as Listed***
-   * Data Type: INTEGER
-   * *Other fields are optional and not used for this demo*
-
-* Then, click on the "Properties" tab.
-
-<img src=".//media/image11.png"/>
-
-* Update the Data Frequency to 5 seconds, and click save.
-
-<img src=".//media/image12.png"/>
+<img src=".//media/image32.png"/>
 
 ## Step 4: Create a Your Device in IoTConnect
 * Navigate back to the “Device” menu and click on “Create Device” in the top right corner of the screen.
@@ -77,7 +67,10 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
  
 **Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
 
-## Step 5: Flash IoTConnect-Compatible Image to Board
+## Step 5: PROTEUS Sensor Setup
+*TBD
+
+## Step 6: Flash IoTConnect-Compatible Image to Board
 * To download the zipped image folder, [click here](https://ln5.sync.com/dl/fd0051950/4qnh3efg-2wauv97s-pzkfbf5w-4bsuucs2).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
@@ -150,22 +143,27 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
    * Optionally, you may connect the board to an external monitor using the HMDI port. 
 
-## Step 6: Gather Files and Set Up Software
+## Step 7: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```su```
    * ```apt-get update```
    * ```apt-get upgrade -y```
+   * '''dd if=/dev/zero of=/swapfile bs=1024 count=1048576'''
+   * '''chmod 600 /swapfile'''
+   * '''mkswap /swapfile'''
+   * '''swapon /swapfile'''
    * ```apt-get install unzip python3-pip -y```
+   * '''pip3 install bleak'''
    * ```mkdir /home/weston/Demo```
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
    * ```unzip main.zip```
-   * ```cd iotc-python-examples-main/STM32MP157F-DK2_Demo```
+   * ```cd iotc-python-examples-main/PROTEUS_MP157F-DK2_Demo```
    * ```chmod +x STM32MP157_setup.sh```
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
  
-## Step 7: Run the Demo
+## Step 8: Run the Demo
 * To actually start the demo, first navigate to the project sample directory with this command:
 
  ```cd iotconnect-python-sdk-v1.0/sample```
@@ -186,7 +184,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image10.png"/>
 
-## Step 8: View the Data
+## Step 9: View the Data
 * Navigate back to the “Device” menu and select your device named "STM32MP157F."
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
