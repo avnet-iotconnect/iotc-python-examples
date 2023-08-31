@@ -2,7 +2,6 @@ import argparse
 import asyncio
 from bleak import BleakClient, BleakScanner
 from bleak.backends.characteristic import BleakGATTCharacteristic
-import proteus_data
 import struct
 import pexpect
 import time
