@@ -160,11 +160,13 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * ```apt-get update```
    * ```apt-get upgrade -y```
    * ```dd if=/dev/zero of=/swapfile bs=1024 count=1048576```
+      * **This command takes a few minutes to execute**
    * ```chmod 600 /swapfile```
    * ```mkswap /swapfile```
    * ```swapon /swapfile```
    * ```apt-get install unzip python3-pip -y```
    * ```pip3 install bleak```
+      * **This command takes a few minutes to execute** 
    * ```mkdir /home/weston/Demo```
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
