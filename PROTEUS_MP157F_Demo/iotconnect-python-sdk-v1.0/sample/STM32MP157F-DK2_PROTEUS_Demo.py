@@ -150,7 +150,7 @@ def main():
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-                proteus_thread = threading.Thread(target=proteus_plugin.data_transfer)
+                proteus_thread = threading.Thread(target=proteus_plugin.proteus_loop)
                 proteus_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
