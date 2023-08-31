@@ -60,7 +60,7 @@ def setup_bluetooth():
 
 def temperature_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     global telemetry
-    telemetry["temperature_deg_C"] = (int.from_bytes(data[2:3], "little")/10.0
+    telemetry["temperature_deg_C"] = (int.from_bytes(data[2:4], "little")/10.0
     print("temp")
     print(telemetry["temperature_deg_C"])
 
