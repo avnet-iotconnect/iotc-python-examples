@@ -8,6 +8,8 @@ import pexpect
 import time
 import sys
 
+
+
 temperature_characteristic = "00040000-0001-11e1-ac36-0002a5d5c51b"
 accel_and_gyro_characteristic =  "00c00000-0001-11e1-ac36-0002a5d5c51b"
 battery_characteristic = "00020000-0001-11e1-ac36-0002a5d5c51b"
@@ -24,6 +26,11 @@ def setup_bluetooth():
     time.sleep(1)
     setup_process.close()
 
+def temperature_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
+    pass
+
+def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
+    pass
 
 def freq_domain_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     status_options = ["Good", "Warning", "Alert"]
@@ -31,12 +38,12 @@ def freq_domain_data_handler(characteristic: BleakGATTCharacteristic, data:bytea
     proteus_data.telemetry["freq_status_x"] = status_options[int(data_binary_str[18:20], 2)]
     proteus_data.telemetry["freq_status_y"] = status_options[int(data_binary_str[20:22], 2)]
     proteus_data.telemetry["freq_status_z"] = status_options[int(data_binary_str[22:24], 2)]
-    proteus_data.telemetry["freq_max_amp_x_ms2"] = (struct.unpack('<H', data[5:7])[0])/100.0
     proteus_data.telemetry["freq_x_hz"] = (struct.unpack('<H', data[3:5])[0])/10.0
-    proteus_data.telemetry["freq_max_amp_y_ms2"] = (struct.unpack('<H', data[9:11])[0])/100.0
+    proteus_data.telemetry["freq_max_amp_x_ms2"] = (struct.unpack('<H', data[5:7])[0])/100.0
     proteus_data.telemetry["freq_y_hz"] = (struct.unpack('<H', data[7:9])[0])/10.0
-    proteus_data.telemetry["freq_max_amp_z_ms2"] = (struct.unpack('<H', data[13:15])[0])/100.0
+    proteus_data.telemetry["freq_max_amp_y_ms2"] = (struct.unpack('<H', data[9:11])[0])/100.0
     proteus_data.telemetry["freq_z_hz"] = (struct.unpack('<H', data[11:13])[0])/10.0
+    proteus_data.telemetry["freq_max_amp_z_ms2"] = (struct.unpack('<H', data[13:15])[0])/100.0
 
 		
 def accel_gyro_data_handler(characteristic: BleakGATTCharacteristic, data: bytearray):
