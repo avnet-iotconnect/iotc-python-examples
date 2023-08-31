@@ -8,7 +8,6 @@ from datetime import datetime
 import os
 import getopt
 import proteus_plugin
-import proteus_data
 
 # Get CPID and Environment values from command-line options
 cpid = ""
