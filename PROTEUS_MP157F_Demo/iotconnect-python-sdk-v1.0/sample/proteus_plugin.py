@@ -60,18 +60,18 @@ def setup_bluetooth():
 
 def temperature_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     global telemetry
-    telemetry["temperature_deg_C"] = (int.from_bytes(data[2:4], "little")/10.0
+    telemetry["temperature_deg_C"] = int.from_bytes(data[2:4], "little")/10.0
     print("temp")
     print(telemetry["temperature_deg_C"])
 
 def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     global telemetry
-    telemetry["battery_percentage"] = (int.from_bytes(data[2:4], "little")/10.0
+    telemetry["battery_percentage"] = int.from_bytes(data[2:4], "little")/10.0
     print("battery stuff")
     print(telemetry["battery_percentage"])
-    telemetry["battery_voltage"] = (int.from_bytes(data[4:6], "little")/1000.0
+    telemetry["battery_voltage"] = int.from_bytes(data[4:6], "little")/1000.0
     print(telemetry["battery_voltage"])
-    telemetry["battery_current"] = (int.from_bytes(data[6:8], "little")
+    telemetry["battery_current"] = int.from_bytes(data[6:8], "little")
     print(telemetry["battery_current"])
     status_options = ["Low Battery", "Discharging", "Plugged not Charging", "Charging", "Unknown"]
     telemetry["battery_status"] = status_options[data[8]]
@@ -140,8 +140,8 @@ async def proteus_reporting_loop():
         await client.start_notify(rms_speed_characteristic, rms_speed_data_handler)
         await client.start_notify(peak_acceleration_characteristic, peak_accel_data_handler)
         await client.start_notify(freq_domain_characteristic, freq_domain_data_handler)
-	await client.start_notify(temperature_characteristic, temperature_data_handler)
-	await client.start_notify(battery_characteristic, battery_data_handler)
+        await client.start_notify(temperature_characteristic, temperature_data_handler)
+        await client.start_notify(battery_characteristic, battery_data_handler)
         while True:
             await asyncio.sleep(1)
 
