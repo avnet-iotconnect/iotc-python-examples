@@ -162,6 +162,7 @@ def main():
                     dObj = [{
                         "uniqueId": UniqueId,
                         "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+			#Access updated data dictionary from plugin file
                         "data": proteus_plugin.telemetry
                     }]
                     sendBackToSDK(Sdk, dObj)
