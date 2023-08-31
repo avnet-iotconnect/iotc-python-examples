@@ -26,7 +26,17 @@ def setup_bluetooth():
 
 
 def freq_domain_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
-    pass
+    status_options = ["Good", "Warning", "Alert"]
+    data_binary_str = format(int.from_bytes((data)),'#0122b')[2:]
+    proteus_data.telemetry["freq_status_x"] = status_options[int(data_binary_str[18:20], 2)]
+    proteus_data.telemetry["freq_status_y"] = status_options[int(data_binary_str[20:22], 2)]
+    proteus_data.telemetry["freq_status_z"] = status_options[int(data_binary_str[22:24], 2)]
+    proteus_data.telemetry["freq_max_amp_x_ms2"] = (struct.unpack('<H', data[5:7])[0])/100.0
+    proteus_data.telemetry["freq_x_hz"] = (struct.unpack('<H', data[3:5])[0])/10.0
+    proteus_data.telemetry["freq_max_amp_y_ms2"] = (struct.unpack('<H', data[9:11])[0])/100.0
+    proteus_data.telemetry["freq_y_hz"] = (struct.unpack('<H', data[7:9])[0])/10.0
+    proteus_data.telemetry["freq_max_amp_z_ms2"] = (struct.unpack('<H', data[13:15])[0])/100.0
+    proteus_data.telemetry["freq_z_hz"] = (struct.unpack('<H', data[11:13])[0])/10.0
 
 		
 def accel_gyro_data_handler(characteristic: BleakGATTCharacteristic, data: bytearray):
@@ -73,7 +83,7 @@ async def proteus_reporting_loop():
         await client.start_notify(accel_and_gyro_characteristic, accel_gyro_data_handler)
         await client.start_notify(rms_speed_characteristic, rms_speed_data_handler)
         await client.start_notify(peak_acceleration_characteristic, peak_accel_data_handler)
-        #await client.start_notify(freq_domain_characteristic_ freq_domain_data_handler)
+        await client.start_notify(freq_domain_characteristic, freq_domain_data_handler)
         while True:
             await asyncio.sleep(1)
 
