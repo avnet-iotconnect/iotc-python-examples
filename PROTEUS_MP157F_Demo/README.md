@@ -83,7 +83,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * At this point, your PROTEUS sensor kit is ready for use.
 
 ## Step 6: Flash IoTConnect-Compatible Image to STM32MP157F-DK2 Board
-* To download the zipped image folder, [click here](https://terabox.com/s/1pxmRhzX9786aPt2L1_k7VQ).
+* To download the zipped image folder, [click here](https://drive.google.com/file/d/1pwyrPyUtCVty8CxHwHp7hBSuPApsfei0/view?usp=drive_link).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
    * You may have to create an ST account (it's free) to get access to the software download.
