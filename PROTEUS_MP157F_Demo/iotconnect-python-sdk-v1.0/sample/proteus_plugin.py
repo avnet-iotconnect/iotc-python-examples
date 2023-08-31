@@ -62,7 +62,7 @@ def temperature_data_handler(characteristic: BleakGATTCharacteristic, data:bytea
     global telemetry
     telemetry["temperature_deg_C"] = (int.from_bytes(data[2:3], "little")/10.0
     print("temp")
-    print(telemetry["temeperature_deg_C"])
+    print(telemetry["temperature_deg_C"])
 
 def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     global telemetry
@@ -74,7 +74,7 @@ def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray
     telemetry["battery_current"] = (int.from_bytes(data[6:8], "little")
     print(telemetry["battery_current"])
     status_options = ["Low Battery", "Discharging", "Plugged not Charging", "Charging", "Unknown"]
-    telemetry["battery_status"] = status_options[int.from_bytes(data[8], "little")]
+    telemetry["battery_status"] = status_options[data[8]]
     print(telemetry["battery_status"])
 
 def freq_domain_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
