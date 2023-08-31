@@ -163,7 +163,7 @@ def main():
                     dObj = [{
                         "uniqueId": UniqueId,
                         "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-                        "data": proteus_data.telemetry
+                        "data": proteus_plugin.telemetry
                     }]
                     sendBackToSDK(Sdk, dObj)
                     
