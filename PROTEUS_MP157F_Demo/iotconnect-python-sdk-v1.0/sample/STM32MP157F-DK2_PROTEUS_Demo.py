@@ -25,7 +25,7 @@ for opt, arg in opts:
     elif opt == '-e':
         env = arg
     elif opt == '-u':
-	UniqueId = arg
+        UniqueId = arg
     else:
         raise Exception("Invalid option.")
 
