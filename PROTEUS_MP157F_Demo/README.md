@@ -134,7 +134,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 <img src=".//media/image26.png"/>
     
 * You are ready to flash. Click the "Download" button to begin the flashing process.
-   * The STM32MP157F-DK2 will turn off and on several times throughout the flashing process. It is important to not unplug or disturb it during the process. Given the size of the image it will usually take **between 30 and 45 minutes** to flash.
+   * The STM32MP157F-DK2 will turn off and on several times throughout the flashing process. It is important to not unplug or disturb it during the process. Given the size of the image it will usually take **up to 45 minutes** to flash.
    * It is worth noting that the LCD screen on the board will turn on with some output text during the flash process, so do not be alarmed.
 
 <img src=".//media/image27.png"/>
@@ -171,7 +171,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
    * ```unzip main.zip```
-   * ```cd iotc-python-examples-main/PROTEUS_MP157F-DK2_Demo```
+   * ```cd iotc-python-examples-main/PROTEUS_MP157F_Demo```
    * ```chmod +x STM32MP157_setup.sh```
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
