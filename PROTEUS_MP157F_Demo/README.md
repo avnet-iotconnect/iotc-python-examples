@@ -49,11 +49,19 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image5.png"/>
 
-* Enter the following information and then click “Save and View”:
+* For the default configuration (no device naming configuration in final script), enter the following information and then click “Save and View”:
    * Unique Id: STM32MP157F
    * Display Name: STM32MP157F
    * Entity: Avnet
    * Template: MP157F
+     
+* For a custom UniqueID/DisplayName (device naming configuration in final script), enter the following information and then click “Save and View”:
+   * Unique Id: <Your UniqueID/DisplayName Here>
+   * Display Name: <Your UniqueID/DisplayName Here>
+   * Entity: Avnet
+   * Template: MP157F
+ 
+      * **NOTE: This demo is deisgned for the Unique ID and the Display Name to be exactly the same, so it is critical that you make them identical to each other. It will not work otherwise.**
  
 <img src=".//media/image6.png"/>
 
@@ -181,13 +189,21 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
  ```cd iotconnect-python-sdk-v1.0/sample```
 
-* Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID and Environment:
+* Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID, Environment, and UniqueID:
 
-```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
+```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "<CPID_Goes_Here>" -e "<Environment_Goes_Here>" -u "<UniqueID_Goes_Here>"```
+   
+   * If using the default UniqueID/DisplayName, the command will be:
 
-* For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
+   ```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "<CPID_Goes_Here>" -e "<Environment_Goes_Here>"```
 
-```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
+* For example if my CPID was ABCDEFGHIJKLMNOP123456789, my Environment was TechnologyLab, and my device's Unique ID was TestDevice, my command would be:
+
+```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab" -u "TestDevice"```
+
+   * If using the default UniqueID/DisplayName, the command would be:
+
+   ```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
@@ -198,7 +214,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 <img src=".//media/image10.png"/>
 
 ## Step 9: View the Data
-* Navigate back to the “Device” menu and select your device named "STM32MP157F."
+* Navigate back to the “Device” menu and select your device named "STM32MP157F" (or your custom Display Name if you did not use the default).
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
 <img src=".//media/image13.png"/>
