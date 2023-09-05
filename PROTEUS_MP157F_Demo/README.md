@@ -180,6 +180,11 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
    * ```unzip main.zip```
    * ```cd iotc-python-examples-main/PROTEUS_MP157F_Demo```
+   * **ONLY IF NOT USING DEFAULT UNIQUEID/DISPLAYNAME**
+     * Insert your custom UniqueID/DisplayName into the command below:
+     * ```sed -i 's/STM32MP157F/<CustomUniqueIDDisplayName>/g' STM32MP157_setup.sh```
+     * For example if my custom UniqueID/DisplayName was "TestDevice" the command would be:
+       * ```sed -i 's/STM32MP157F/TestDevice/g' STM32MP157_setup.sh```
    * ```chmod +x STM32MP157_setup.sh```
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
