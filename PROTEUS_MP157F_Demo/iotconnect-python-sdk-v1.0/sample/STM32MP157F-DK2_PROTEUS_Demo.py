@@ -9,12 +9,13 @@ import os
 import getopt
 import proteus_plugin
 
-# Get CPID and Environment values from command-line options
+# Get CPID, Environment, and uniqueID values from command-line options
 cpid = ""
 env = ""
+UniqueId = "STM32MP157F"
 argv = sys.argv[1:]
 try:
-    opts, args = getopt.getopt(argv,"c:e:")
+    opts, args = getopt.getopt(argv,"c:e:u:")
 except Exception as ex:
     print(ex)
     print("Options error")
@@ -23,11 +24,12 @@ for opt, arg in opts:
         cpid = arg
     elif opt == '-e':
         env = arg
+    elif opt == '-u':
+	UniqueId = arg
     else:
         raise Exception("Invalid option.")
 
 	
-UniqueId = "STM32MP157F"
 SId = ""
 Sdk=None
 interval = 60
@@ -37,8 +39,8 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/Demo/STM32MP157F-certificates/pk_STM32MP157F.pem", 
-		"SSLCertPath" : "/home/weston/Demo/STM32MP157F-certificates/cert_STM32MP157F.crt",
+		"SSLKeyPath"  : "/home/weston/Demo/" + UniqueId + "-certificates/pk_" + UniqueId + ".pem", 
+		"SSLCertPath" : "/home/weston/Demo/" + UniqueId + "-certificates/cert_" + UniqueId + ".crt",
 		"SSLCaPath"   : "/home/weston/Demo/iotc-python-examples-main/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
