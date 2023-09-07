@@ -32,7 +32,7 @@ for opt, arg in opts:
 	
 SId = ""
 Sdk=None
-interval = 60
+interval = 5
 directmethodlist={}
 ACKdirect=[]
 device_list=[]
