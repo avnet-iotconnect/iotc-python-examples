@@ -158,9 +158,34 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * **For the first boot after flashing, the board takes a few minutes to turn on.**
 
 * To complete the setup process:
-   * Connect the ethernet port of your board to your internet router using an ethernet cable.
+   * Connect your board to the internet by either using an ethernet cable, or by following the optional Wi-Fi configuration step below.
    * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
-   * Optionally, you may connect the board to an external monitor using the HMDI port. 
+   * Optionally, you may connect the board to an external monitor using the HMDI port.
+
+* **Wi-Fi Configuration (OPTIONAL)**
+  * Open a terminal window and run these commands in this order:
+    * ```ifconfig wlan0 up```
+    * ```echo "[Match]" > /lib/systemd/network/51-wireless.network```
+    * ```echo "Name=wlan0" >> /lib/systemd/network/51-wireless.network```
+    * ```echo "[Network]" >> /lib/systemd/network/51-wireless.network```
+    * ```echo "DHCP=ipv4" >> /lib/systemd/network/51-wireless.network```
+    * ```mkdir -p /etc/wpa_supplicant/```
+    * ```echo "ctrl_interface=/var/run/wpa_supplicant" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+    * ```echo "eapol_version=1" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+    * ```echo "ap_scan=1" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+    * ```echo "fast_reauth=1" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+    * ```echo "" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+    * ```wpa_passphrase SSID_OF_NETWORK PASSWORD_OF_NETWORK >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+      * Substitute your target network SSID and passphrase for SSID_OF_NETWORK and PASSWORD_OF_NETWORK respectively
+      * For example if my network name and passphrase were "MyNetwork" and "MyPassword" the command would be:
+        * ```wpa_passphrase pMyNetwork MyPassword >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+    * ```systemctl enable wpa_supplicant@wlan0.service```
+    * ```systemctl restart systemd-networkd.service```
+    * ```systemctl restart wpa_supplicant@wlan0.service```
+  * At this point your wifi configuration is complete. Use this ping command to ensure it is working:
+    * ```ping google.com```
+      * If it is working, the output will show repetitive pings back to the site. If there is no periodic output and the command times out, there is a problem.  
+  * Your device will also automatically reconnect to the wifi after rebooting.  
 
 ## Step 7: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
