@@ -178,7 +178,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
     * ```wpa_passphrase SSID_OF_NETWORK PASSWORD_OF_NETWORK >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
       * Substitute your target network SSID and passphrase for SSID_OF_NETWORK and PASSWORD_OF_NETWORK respectively
       * For example if my network name and passphrase were "MyNetwork" and "MyPassword" the command would be:
-        * ```wpa_passphrase pMyNetwork MyPassword >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
+        * ```wpa_passphrase MyNetwork MyPassword >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
     * ```systemctl enable wpa_supplicant@wlan0.service```
     * ```systemctl restart systemd-networkd.service```
     * ```systemctl restart wpa_supplicant@wlan0.service```
