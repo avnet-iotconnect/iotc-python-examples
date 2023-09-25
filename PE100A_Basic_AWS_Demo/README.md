@@ -1,4 +1,4 @@
-# Asus PE100A Basic Demo (For IoTConnect on AWS)
+# Asus PE100A Basic Demo
 
 This demo uses an [ASUS PE100A Intelligent Edge Computer](https://iot.asus.com/products/intelligent-edge-computer/PE100A/) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using both AWS and Azure. 
 
