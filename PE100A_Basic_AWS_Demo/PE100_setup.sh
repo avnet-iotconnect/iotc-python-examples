@@ -20,7 +20,7 @@ sudo mount /dev/sda1 /media/usbdrive || sudo mount /dev/sdb1 /media/usbdrive
 cp -r /media/usbdrive/PE100_Demo-certificates /home/asus/PE100_Demo
 
 cd /home/asus/PE100_Demo/iotc-pov-engineering/PE100A_Basic_AWS_Demo/
-cp ./PE100_Basic_Demo.py /home/asus/PE100_Demo/iotc-python-sdk-master-std-21/sample
+cp ./PE100_Basic_AWS_Demo.py /home/asus/PE100_Demo/iotc-python-sdk-master-std-21/sample
 cp ./root-CA.pem /home/asus/PE100_Demo
 
 
