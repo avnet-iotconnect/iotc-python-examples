@@ -104,7 +104,7 @@ This documentation is written to guide users through the demo setup on both the 
 ```python3 PE100_Basic_AWS_Demo.py -c "CPID_Goes_Here" -e "Environment_Goes_Here"```
 
 * For example if my CPID was ABCDEFGHIJKLMNOP123456789 and my Environment was TechnologyLab, my command would be:
-   * ```python3 PE100_Motor_Monitor_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
+   * ```python3 PE100_Basic_AWS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
