@@ -52,13 +52,13 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * For the default configuration (no device naming configuration in final script), enter the following information and then click “Save and View”:
    * Unique Id: STM32MP157F
    * Display Name: STM32MP157F
-   * Entity: Avnet
+   * Entity: (Any Generic Entity Will Work)
    * Template: MP157F
      
 * For a custom UniqueID/DisplayName (device naming configuration in final script), enter the following information and then click “Save and View”:
    * Unique Id: <Your UniqueID/DisplayName Here>
    * Display Name: <Your UniqueID/DisplayName Here>
-   * Entity: Avnet
+   * Entity: (Any Generic Entity Will Work)
    * Template: MP157F
  
       * **NOTE: This demo is deisgned for the Unique ID and the Display Name to be exactly the same, so it is critical that you make them identical to each other. It will not work otherwise.**
