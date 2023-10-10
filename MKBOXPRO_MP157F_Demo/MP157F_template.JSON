@@ -226,7 +226,7 @@
     "greenGrass": "0",
     "properties": {
         "description": null,
-        "dataFrequency": "5",
+        "dataFrequency": "60",
         "fileSupport": false
     },
     "_meta": {
