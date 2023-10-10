@@ -69,17 +69,19 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
 
 <img src=".//media/image7.png"/>
 
-* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “ST32MP157F-certificates.”
+* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package.
 
 <img src=".//media/image8.png"/>
 
-* Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). The folder should include:
+* Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). If using the default configuration, the folder should be named “STM32MP157F-certificates” and should include:
    * pk_STM32MP157F.pem
    * cert_STM32MP157F.crt
  
-**NOTE: The certificate folder needs to be named “STM32MP157F-certificates” in order to work properly.**
+* If using a custom UniqueID/DisplayName (denoted as <UniqueID/DisplayName>), the folder should be named “<UniqueID/DisplayName>-certificates” and should include:
+   * pk_<UniqueID/DisplayName>.pem
+   * cert_<UniqueID/DisplayName>.crt
 
-## Step 5: PROTEUS Sensor Setup
+## Step 5: MKBOXPRO Sensor Setup
 * For assembly, follow section 4.1 in the provided [getting started document](https://www.st.com/resource/en/user_manual/um3000-getting-started-with-the-stevalproteus1-evaluation-kit-for-condition-monitoring-based-on-the-24-ghz-stm32wb5mmg-module-stmicroelectronics.pdf) for the PROTEUS. Getting the battery connector to solidly seat into its slot on the main board is a bit tricky, so make sure you take your time on that step.
   
 * After the sensor kit is assembled, power the board with a Micro-USB cable. While the device has a battery, its level of charge when it comes from the manufacturer can vary.
