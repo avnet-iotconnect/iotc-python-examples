@@ -2,7 +2,7 @@
 
 This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
 
-For this demo, predictive motor maintenance data is being collected via bluetooth (BLE) from an [STEVAL-PROTEUS1 Industrial Evaluation Sensor](https://www.st.com/en/evaluation-tools/steval-proteus1.html). This data includes vibration speed, acceleration, and frequency data that can be used to monitor the health of field machines from anywhere with an internet connection.
+For this demo, various types of sensor data is being collected via bluetooth (BLE) from an [SensorTile.box PRO](https://www.st.com/en/evaluation-tools/steval-mkboxpro.html). This data includes readinsg from temperature, air pressure, acceleration, gyroscope, magnetometer, and battery sensors.
 
 <img src=".//media/image34.png"/> 
 
@@ -52,13 +52,13 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * For the default configuration (no device naming configuration in final script), enter the following information and then click “Save and View”:
    * Unique Id: STM32MP157F
    * Display Name: STM32MP157F
-   * Entity: Avnet
+   * Entity: (Any Generic Entity Will Work)
    * Template: MP157F
      
 * For a custom UniqueID/DisplayName (device naming configuration in final script), enter the following information and then click “Save and View”:
    * Unique Id: <Your UniqueID/DisplayName Here>
    * Display Name: <Your UniqueID/DisplayName Here>
-   * Entity: Avnet
+   * Entity: (Any Generic Entity Will Work)
    * Template: MP157F
  
       * **NOTE: This demo is deisgned for the Unique ID and the Display Name to be exactly the same, so it is critical that you make them identical to each other. It will not work otherwise.**
@@ -77,7 +77,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * pk_STM32MP157F.pem
    * cert_STM32MP157F.crt
  
-**Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
+**NOTE: The certificate folder needs to be named “STM32MP157F-certificates” in order to work properly.**
 
 ## Step 5: PROTEUS Sensor Setup
 * For assembly, follow section 4.1 in the provided [getting started document](https://www.st.com/resource/en/user_manual/um3000-getting-started-with-the-stevalproteus1-evaluation-kit-for-condition-monitoring-based-on-the-24-ghz-stm32wb5mmg-module-stmicroelectronics.pdf) for the PROTEUS. Getting the battery connector to solidly seat into its slot on the main board is a bit tricky, so make sure you take your time on that step.
@@ -159,7 +159,6 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * To complete the setup process:
    * Connect your board to the internet by either using an ethernet cable, or by following the optional Wi-Fi configuration step below.
-   * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
    * Optionally, you may connect the board to an external monitor using the HMDI port.
 
 * **Wi-Fi Configuration (OPTIONAL)**
@@ -192,14 +191,15 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * ```su```
    * ```apt-get update```
    * ```apt-get upgrade -y```
+   * ```apt-get install unzip python3-pip -y```
    * ```dd if=/dev/zero of=/swapfile bs=1024 count=1048576```
       * **(This command takes a few minutes to execute)**
    * ```chmod 600 /swapfile```
    * ```mkswap /swapfile```
    * ```swapon /swapfile```
-   * ```apt-get install unzip python3-pip -y```
    * ```pip3 install bleak```
-      * **(This command takes several minutes to execute)** 
+      * **(This command takes several minutes to execute)**
+      * NOTE: To successfully install bleak, the previous 4 commands MUST have been run in this same terminal instance.
    * ```mkdir /home/weston/Demo```
    * ```cd /home/weston/Demo```
    * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
