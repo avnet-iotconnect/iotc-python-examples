@@ -1,7 +1,7 @@
 {
     "code": "MP157F",
     "name": "MP157F",
-    "authType": 3,
+    "authType": 2,
     "isIotEdgeEnable": false,
     "attributes": [
         {
@@ -195,13 +195,38 @@
             "type": "STRING",
             "description": null,
             "unit": null
+        },
+        {
+            "name": "pressure_mBar",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "magnet_x_mGa",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "magnet_y_mGa",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "magnet_z_mGa",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
         }
     ],
     "messageVersion": "2.1",
     "msgCode": "XG4E2ZT",
+    "greenGrass": "0",
     "properties": {
         "description": null,
-        "dataFrequency": "60",
+        "dataFrequency": "5",
         "fileSupport": false
     },
     "_meta": {
