@@ -77,7 +77,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * pk_STM32MP157F.pem
    * cert_STM32MP157F.crt
  
-**Do not rename the folder, it needs to keep the name “STM32MP157F-certificates” in order to work properly.**
+**NOTE: The certificate folder needs to be named “STM32MP157F-certificates” in order to work properly.**
 
 ## Step 5: PROTEUS Sensor Setup
 * For assembly, follow section 4.1 in the provided [getting started document](https://www.st.com/resource/en/user_manual/um3000-getting-started-with-the-stevalproteus1-evaluation-kit-for-condition-monitoring-based-on-the-24-ghz-stm32wb5mmg-module-stmicroelectronics.pdf) for the PROTEUS. Getting the battery connector to solidly seat into its slot on the main board is a bit tricky, so make sure you take your time on that step.
