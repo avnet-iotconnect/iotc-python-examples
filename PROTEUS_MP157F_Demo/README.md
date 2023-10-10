@@ -159,7 +159,6 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * To complete the setup process:
    * Connect your board to the internet by either using an ethernet cable, or by following the optional Wi-Fi configuration step below.
-   * Connect a USB mouse and keyboard to the board using 2 of the 4 onboard USB ports.
    * Optionally, you may connect the board to an external monitor using the HMDI port.
 
 * **Wi-Fi Configuration (OPTIONAL)**
