@@ -12,8 +12,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
 
 ## Step 2: Sign in to IoTConnect Account
-* Navigate to https://awspoc.iotconnect.io/ and enter your account credentials.
-   * This should bring you to your AWS IoTConnect Dashboard.
+* This demo uses IoTConnect on AWS.
+* An IoTConnect account is required to continue with this guide. If you need to create an account, a free 2-month subscription is available. Please follow the [Creating a New IoTConnect Account](https://github.com/avnet-iotconnect/avnet-iotconnect.github.io/blob/main/documentation/iotconnect/subscription/subscription.md) guide and return to this guide once complete.
 
 ## Step 3: Import a Template for Your Device 
 * Within this git repo, navigate to the PROTEUS_MP157F_Demo directory and click on the file called MP157F_template.JSON.
@@ -161,10 +161,10 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * To complete the setup process:
    * Connect your board to the internet by either using an ethernet cable, or by following the optional Wi-Fi configuration step below.
-   * Optionally, you may connect the board to an external monitor using the HMDI port.
+   * You will also need to connect the STM32MP157 Discovery kit to your PC using a USB-A to micro-USB cable. Connect to the assigned COM Port using serial console application, such as [Tera Term](https://ttssh2.osdn.jp/index.html.en), or a browser application like [Google Chrome Labs Serial Terminal](https://googlechromelabs.github.io/serial-terminal/). Optionally, you may connect the board to an external monitor using the HMDI port and a keyboard/mouse.
 
 * **Wi-Fi Configuration (OPTIONAL)**
-  * Open a terminal window and run these commands in this order:
+  * Using the serial terminal connected to the ST Discovery board, run these commands in this order:
     * ```ifconfig wlan0 up```
     * ```echo "[Match]" > /lib/systemd/network/51-wireless.network```
     * ```echo "Name=wlan0" >> /lib/systemd/network/51-wireless.network```
@@ -189,7 +189,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
   * Your device will also automatically reconnect to the wifi after rebooting.  
 
 ## Step 7: Gather Files and Set Up Software
-* Open a terminal window and run these commands in this order:
+* Using the serial terminal connected to the ST Discovery board, run these commands in this order:
    * ```su```
    * ```apt-get update```
    * ```apt-get upgrade -y```
