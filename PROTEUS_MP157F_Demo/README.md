@@ -69,7 +69,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image7.png"/>
 
-* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package called “ST32MP157F-certificates.”
+* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package.
 
 <img src=".//media/image8.png"/>
 
