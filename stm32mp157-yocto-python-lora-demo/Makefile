@@ -1,13 +1,6 @@
 env:
 	docker run --rm -it \
-	-v  $${PWD}:$${PWD}:Z \
-	-v ~/.gitconfig:/etc/gitconfig:Z \
-	crops/poky:ubuntu-22.04 \
-	--workdir=$${PWD} \
-	/bin/bash -c 'source ./layers/openembedded-core/oe-init-build-env build-openstlinuxweston-stm32mp1/ && bash'
-
-env2:
-	docker run --rm -it \
+	--security-opt seccomp=unconfined \
 	-v  $${PWD}:$${PWD}:Z \
 	-v ~/.gitconfig:/etc/gitconfig:Z \
 	crops/poky:ubuntu-22.04 \
@@ -16,6 +9,7 @@ env2:
 
 docker:
 	docker run --rm -it \
+	--security-opt seccomp=unconfined \
 	-v  $${PWD}:$${PWD}:Z \
 	-v ~/.gitconfig:/etc/gitconfig:Z \
 	crops/poky:ubuntu-22.04 \
@@ -24,6 +18,7 @@ docker:
 
 build:
 	docker run --rm -it \
+	--security-opt seccomp=unconfined \
 	-v  $${PWD}:$${PWD}:Z \
 	-v ~/.gitconfig:/etc/gitconfig:Z \
 	crops/poky:ubuntu-22.04 \
