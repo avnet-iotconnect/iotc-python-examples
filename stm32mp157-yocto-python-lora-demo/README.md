@@ -38,7 +38,7 @@ Tested on Ubuntu 22.04, 23.04, Kubuntu 22.04
     repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-5.15-yocto-kirkstone-mp1-v23.07.26 && repo sync
     ```
 
-4.  Copy provided Makefile to project directory and execute these commands in the terminal
+4.  Copy provided Makefile and Dockerfile to project directory and execute these commands in the terminal
     ```bash
     make docker
     DISTRO=openstlinux-weston MACHINE=stm32mp1 source layers/meta-st/scripts/envsetup.sh
