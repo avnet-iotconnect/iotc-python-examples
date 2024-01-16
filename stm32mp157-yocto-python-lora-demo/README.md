@@ -41,17 +41,6 @@ Tested on Ubuntu 22.04, 23.04, Kubuntu 22.04
 4.  Copy provided Makefile to project directory and execute these commands in the terminal
     ```bash
     make docker
-    ```
-
-5.  Create a new terminal on the host machine:
-    ```bash
-    # this will install the extra dependencies we need
-    docker exec -u root $(docker ps --filter "ancestor=crops/poky:ubuntu-22.04" --format "{{.Names}}") apt-get -y install bsdmainutils libgmp-dev libmpc-dev libssl-dev python3-pip
-    # return back to the terminal where you executed the last step.
-    ```
-
-6.  Inside the docker container execute: 
-    ```bash
     DISTRO=openstlinux-weston MACHINE=stm32mp1 source layers/meta-st/scripts/envsetup.sh
     # go through the EULA and accept everything.
     
