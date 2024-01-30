@@ -7,6 +7,13 @@ import pexpect
 import time
 import sys
 
+# Anomaly Detection mode can either be "Learning" or "Detection"
+AD_Mode = "Learning"
+# Anomaly Detection can be either be "On" or "Off"
+AD_OnOff = "Off"
+# Knowledge Reset button is either "Normal" or "Pressed"
+Knowledge_Reset_Button = "Normal"
+
 #This dictionary is what the main loop of the main 
 #program will periodcially send as telemetry to IoTConnect
 telemetry = {
@@ -15,6 +22,7 @@ telemetry = {
     "battery_current":0,
     "battery_status": "Not_Available"
 }
+
 
 #These are the UUIDs of the BLE characteristics we use for the PROTEUS in this demo
 battery_characteristic = "00020000-0001-11e1-ac36-0002a5d5c51b"
@@ -63,6 +71,7 @@ async def proteus_functionality():
 	# Start an infinite loop so that notifications are received forever (until the program is shut down)
         while True:
             await asyncio.sleep(1)
+
 
 #This loop is what the dedicated proteus thread will run when started in the main loop
 def proteus_loop():
