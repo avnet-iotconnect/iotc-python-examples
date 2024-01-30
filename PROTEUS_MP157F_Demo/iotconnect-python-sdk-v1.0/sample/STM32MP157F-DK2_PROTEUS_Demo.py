@@ -159,7 +159,7 @@ def main():
 		if fw == "Standard":
 		    proteus_thread = threading.Thread(target=proteus_standard_plugin.proteus_loop)
 		else:
-                    proteus_thread = threading.Thread(target=proteus_AI_PDMWBSOC_plugin.proteus_loop)
+                    proteus_thread = threading.Thread(target=proteus_AI_plugin.proteus_loop)
                 proteus_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
@@ -180,7 +180,7 @@ def main():
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
 			    #Access updated data dictionary from plugin file
-                            "data": proteus_AI_PDMWBSOC_plugin.telemetry
+                            "data": proteus_AI_plugin.telemetry
                         }]
                     sendBackToSDK(Sdk, dObj)
                     
