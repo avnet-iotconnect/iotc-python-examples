@@ -7,13 +7,15 @@ from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
 import getopt
-import proteus_plugin
+import proteus_AI_PDMWBSOC_plugin
+sys.path.append("/home/weston/PROTEUS_MP157F_Demo")
+import config
 
 # Get CPID, Environment, and uniqueID values from command-line options
-cpid = ""
-env = ""
-UniqueId = "STM32MP157F"
-argv = sys.argv[1:]
+cpid = config.cpid
+env = config.env
+UniqueId = config.unique_id
+'''argv = sys.argv[1:]
 try:
     opts, args = getopt.getopt(argv,"c:e:u:")
 except Exception as ex:
@@ -27,7 +29,7 @@ for opt, arg in opts:
     elif opt == '-u':
         UniqueId = arg
     else:
-        raise Exception("Invalid option.")
+        raise Exception("Invalid option.")'''
 
 	
 SId = ""
@@ -41,7 +43,7 @@ SdkOptions={
 	"certificate" : { 
 		"SSLKeyPath"  : "/home/weston/Demo/" + UniqueId + "-certificates/pk_" + UniqueId + ".pem", 
 		"SSLCertPath" : "/home/weston/Demo/" + UniqueId + "-certificates/cert_" + UniqueId + ".crt",
-		"SSLCaPath"   : "/home/weston/Demo/iotc-python-examples-main/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLCaPath"   : "/home/weston/Demo/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
@@ -152,7 +154,7 @@ def main():
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-                proteus_thread = threading.Thread(target=proteus_plugin.proteus_loop)
+                proteus_thread = threading.Thread(target=proteus_AI_PDMWBSOC_plugin.proteus_loop)
                 proteus_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
@@ -165,7 +167,7 @@ def main():
                         "uniqueId": UniqueId,
                         "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
 			#Access updated data dictionary from plugin file
-                        "data": proteus_plugin.telemetry
+                        "data": proteus_AI_PDMWBSOC_plugin.telemetry
                     }]
                     sendBackToSDK(Sdk, dObj)
                     
