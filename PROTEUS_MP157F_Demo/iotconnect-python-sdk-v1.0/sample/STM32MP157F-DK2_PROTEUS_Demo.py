@@ -163,7 +163,7 @@ def main():
                     
             except KeyboardInterrupt:
                 print ("Keyboard Interrupt Exception")
-                os.abort()
+                sys.exit(0)
                  
     except Exception as ex:
         print(ex)
