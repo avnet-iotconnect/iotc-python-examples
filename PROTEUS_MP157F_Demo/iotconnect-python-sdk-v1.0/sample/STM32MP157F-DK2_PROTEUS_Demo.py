@@ -122,7 +122,7 @@ def DirectMethodCallback(msg,methodname,rId):
     data={"data":"fail"}
     ACKdirect.append({"data":data,"status":200,"reqId":rId})
 
-def DeviceChangCallback(msg):
+def DeviceChangeCallback(msg):
     print(msg)
 
 def InitCallback(response):
@@ -141,7 +141,7 @@ def main():
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
                 Sdk.onOTACommand(DeviceFirmwareCallback)
-                Sdk.onDeviceChangeCommand(DeviceChangCallback)
+                Sdk.onDeviceChangeCommand(DeviceChangeCallback)
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
