@@ -17,22 +17,6 @@ cpid = config.cpid
 env = config.env
 UniqueId = config.unique_id
 fw = config.proteus_fw_version
-'''argv = sys.argv[1:]
-try:
-    opts, args = getopt.getopt(argv,"c:e:u:")
-except Exception as ex:
-    print(ex)
-    print("Options error")
-for opt, arg in opts:
-    if opt == '-c':
-        cpid = arg
-    elif opt == '-e':
-        env = arg
-    elif opt == '-u':
-        UniqueId = arg
-    else:
-        raise Exception("Invalid option.")'''
-
 	
 SId = ""
 Sdk=None
