@@ -127,13 +127,6 @@ def DeviceChangCallback(msg):
 
 def InitCallback(response):
     print(response)
-
-def delete_child_callback(msg):
-    print(msg)
-
-def attributeDetails(data):
-    print ("attribute received in firmware")
-    print (data)
     
 def main():
     global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,fw
