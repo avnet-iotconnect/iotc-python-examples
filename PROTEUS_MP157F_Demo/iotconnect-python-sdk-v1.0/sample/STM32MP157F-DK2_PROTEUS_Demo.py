@@ -7,14 +7,16 @@ from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
 import getopt
-import proteus_AI_PDMWBSOC_plugin
+import proteus_AI_plugin
+import proteus_standard_plugin
 sys.path.append("/home/weston/PROTEUS_MP157F_Demo")
 import config
 
-# Get CPID, Environment, and uniqueID values from command-line options
+# Get CPID, Environment, uniqueID, and proteus FW values from command-line options
 cpid = config.cpid
 env = config.env
 UniqueId = config.unique_id
+fw = config.proteus_fw_version
 '''argv = sys.argv[1:]
 try:
     opts, args = getopt.getopt(argv,"c:e:u:")
@@ -150,11 +152,14 @@ def attributeDetails(data):
     print (data)
     
 def main():
-    global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list
+    global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,fw
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-                proteus_thread = threading.Thread(target=proteus_AI_PDMWBSOC_plugin.proteus_loop)
+		if fw == "Standard":
+		    proteus_thread = threading.Thread(target=proteus_standard_plugin.proteus_loop)
+		else:
+                    proteus_thread = threading.Thread(target=proteus_AI_PDMWBSOC_plugin.proteus_loop)
                 proteus_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
@@ -163,12 +168,20 @@ def main():
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
-                    dObj = [{
-                        "uniqueId": UniqueId,
-                        "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-			#Access updated data dictionary from plugin file
-                        "data": proteus_AI_PDMWBSOC_plugin.telemetry
-                    }]
+		    if fw == "Standard":
+		        dObj = [{
+			    "uniqueId": UniqueId,
+			    "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+			    #Access updated data dictionary from plugin file
+			    "data": proteus_standard_plugin.telemetry
+		        }]
+		    else:
+                        dObj = [{
+                            "uniqueId": UniqueId,
+                            "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+			    #Access updated data dictionary from plugin file
+                            "data": proteus_AI_PDMWBSOC_plugin.telemetry
+                        }]
                     sendBackToSDK(Sdk, dObj)
                     
             except KeyboardInterrupt:
