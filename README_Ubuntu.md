@@ -22,8 +22,8 @@ This demo assumes the following:
 ## Step 2: Download the demo repository
 * Open the terminal and run the following command to download and unzip this repostiory:
 
-      wget https://github.com/avnet-iotconnect/iotc-ubuntu-python-demos/archive/refs/heads/main.zip
-      unzip iotc-ubuntu-python-demos-main.zip
+      wget https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip
+      unzip iotc-python-examples-main.zip
   
 ## Step 3: Setup and Run a Demo
 * Run the `setup.sh` script in the terminal to install the latest version of the IoTConnect SDK in a python virtual environment
