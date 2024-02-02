@@ -73,14 +73,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image8.png"/>
 
-* Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). If using the default configuration, the folder should be named “STM32MP157F-certificates” and should include:
-   * pk_STM32MP157F.pem
-   * cert_STM32MP157F.crt
- 
-* If using a custom UniqueID/DisplayName (denoted as <UniqueID/DisplayName>), the folder should be named “<UniqueID/DisplayName>-certificates” and should include:
-   * pk_<UniqueID/DisplayName>.pem
-   * cert_<UniqueID/DisplayName>.crt
-
+* Extract the certificate package folder and save the resulting certificates folder to a known location. You will relocate them later into the setup.
+  
 ## Step 5: PROTEUS Sensor Setup
 * For assembly, follow section 4.1 in the provided [getting started document](https://www.st.com/resource/en/user_manual/um3000-getting-started-with-the-stevalproteus1-evaluation-kit-for-condition-monitoring-based-on-the-24-ghz-stm32wb5mmg-module-stmicroelectronics.pdf) for the PROTEUS. Getting the battery connector to solidly seat into its slot on the main board is a bit tricky, so make sure you take your time on that step.
   
@@ -162,80 +156,20 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * To complete the setup process:
    * Connect your board to the internet by either using an ethernet cable, or by following the optional Wi-Fi configuration step below.
    * You will also need to connect the STM32MP157 Discovery kit to your PC using a USB-A to micro-USB cable. Connect to the assigned COM Port using serial console application, such as [Tera Term](https://ttssh2.osdn.jp/index.html.en), or a browser application like [Google Chrome Labs Serial Terminal](https://googlechromelabs.github.io/serial-terminal/). Optionally, you may connect the board to an external monitor using the HMDI port and a keyboard/mouse.
+      
 
-* **Wi-Fi Configuration (OPTIONAL)**
-  * Using the serial terminal connected to the ST Discovery board, run these commands in this order:
-    * ```ifconfig wlan0 up```
-    * ```echo "[Match]" > /lib/systemd/network/51-wireless.network```
-    * ```echo "Name=wlan0" >> /lib/systemd/network/51-wireless.network```
-    * ```echo "[Network]" >> /lib/systemd/network/51-wireless.network```
-    * ```echo "DHCP=ipv4" >> /lib/systemd/network/51-wireless.network```
-    * ```mkdir -p /etc/wpa_supplicant/```
-    * ```echo "ctrl_interface=/var/run/wpa_supplicant" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-    * ```echo "eapol_version=1" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-    * ```echo "ap_scan=1" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-    * ```echo "fast_reauth=1" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-    * ```echo "" >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-    * ```wpa_passphrase SSID_OF_NETWORK PASSWORD_OF_NETWORK >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-      * Substitute your target network SSID and passphrase for SSID_OF_NETWORK and PASSWORD_OF_NETWORK respectively
-      * For example if my network name and passphrase were "MyNetwork" and "MyPassword" the command would be:
-        * ```wpa_passphrase MyNetwork MyPassword >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf```
-    * ```systemctl enable wpa_supplicant@wlan0.service```
-    * ```systemctl restart systemd-networkd.service```
-    * ```systemctl restart wpa_supplicant@wlan0.service```
-  * At this point your wifi configuration is complete. Use this ping command to ensure it is working:
-    * ```ping google.com```
-      * If it is working, the output will show repetitive pings back to the site. If there is no periodic output and the command times out, there is a problem.  
-  * Your device will also automatically reconnect to the wifi after rebooting.  
+## Step 7: Gather Necessary Files
+* In another browser tab, navigate to [the top of this repository] (https://github.com/avnet-iotconnect/iotc-python-examples/tree/main) and download the repository's zip file as shown here:
 
-## Step 7: Gather Files and Set Up Software
-* Using the serial terminal connected to the ST Discovery board, run these commands in this order:
-   * ```su```
-   * ```apt-get update```
-   * ```apt-get upgrade -y```
-   * ```apt-get install unzip python3-pip -y```
-   * ```dd if=/dev/zero of=/swapfile bs=1024 count=1048576```
-      * **(This command takes a few minutes to execute)**
-   * ```chmod 600 /swapfile```
-   * ```mkswap /swapfile```
-   * ```swapon /swapfile```
-   * ```pip3 install bleak```
-      * **(This command takes several minutes to execute)**
-      * NOTE: To successfully install bleak, the previous 4 commands MUST have been run in this same terminal instance.
-   * ```mkdir /home/weston/Demo```
-   * ```cd /home/weston/Demo```
-   * ```curl -OL https://github.com/avnet-iotconnect/iotc-python-examples/archive/refs/heads/main.zip```
-   * ```unzip main.zip```
-   * ```cd iotc-python-examples-main/PROTEUS_MP157F_Demo```
-   * **ONLY IF NOT USING DEFAULT UNIQUEID/DISPLAYNAME**
-     * Insert your custom UniqueID/DisplayName into the command below:
-       * ```sed -i 's/STM32MP157F/<CustomUniqueIDDisplayName>/g' STM32MP157_setup.sh```
-         * For example if my custom UniqueID/DisplayName was "TestDevice" the command would be:
-           * ```sed -i 's/STM32MP157F/TestDevice/g' STM32MP157_setup.sh```
-   * ```chmod +x STM32MP157_setup.sh```
-   * ```./STM32MP157_setup.sh```
-      * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
- 
-## Step 8: Run the Demo
-* To actually start the demo, first navigate to the project sample directory with this command:
+<img src=".//media/image_a.png"/>
 
- ```cd iotconnect-python-sdk-v1.0/sample```
+* Unzip the downloaded folder and then open it. Navigate to the *iotc-python-examples-main* directory (the name of the overall repo and the first sub-directory will have the same name), and then copy the *PROTEUS_MP157F_Demo* folder to a flash drive. This is the only part of the repository you will need for this demo.
 
-* Then run the program with this command, replacing the placeholder variables with your specific IoTConnect CPID, Environment, and UniqueID:
+* In the *PROTEUS_MP157F_Demo* directory on your flash drive, navigate to the *device_certificates* folder.
 
-  * ```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "<CPID_Goes_Here>" -e "<Environment_Goes_Here>" -u "<UniqueID_Goes_Here>"```
-   
-     * If using the default UniqueID/DisplayName, the command will be:
+* Copy your two individual device certificates from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual *.pem* and *.crt* files.**
 
-       * ```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "<CPID_Goes_Here>" -e "<Environment_Goes_Here>"```
-
-* For example if my CPID was ABCDEFGHIJKLMNOP123456789, my Environment was TechnologyLab, and my device's Unique ID was TestDevice, my command would be:
-
-  * ```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab" -u "TestDevice"```
-
-     * If using the default UniqueID/DisplayName, the command would be:
-
-       * ```python3 STM32MP157F-DK2_PROTEUS_Demo.py -c "ABCDEFGHIJKLMNOP123456789" -e "TechnologyLab"```
+* Back in the *PROTEUS_MP157F_Demo* directory, open up the file config.py in a generic text editor.
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
@@ -244,6 +178,41 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * Your CPID and Environment will be shown as in the image below:
 
 <img src=".//media/image10.png"/>
+
+* Copy your CPID and Environment into the *cpid* and *env* fields of config.py, **within the quotation marks.**
+
+* Enter the Unique ID for your device from step 4 into the *unique_id* field, **within the quotation marks.**
+
+* Ignore the *gateway_sw_version* and *proteus_fw_version* fields for now.
+
+* Save the config.py file and close the text editor.
+
+* Now remove the flash drive from your PC and insert it into a USB port on the STM32MP157F-DK2 gateway.
+
+## Step 8: Configure the Gateway
+
+* These steps can be completed using the serial terminal connected to the ST Discovery board, or using the weston terminal directly on the gateway.
+
+* First, get admin privileges by entering this command:
+* ```su```
+
+* Create a directory for the flash drive to mount to with this command:
+* ```mkdir /media/usbdrive```
+
+* Now, mount the flash drive using this command:
+* ```mount /dev/sda1 /media/usbdrive```
+  * If that command fails (will only fail if you have plugged/unplugged the flash drive from the gateway more than once), use this longer command instead:
+  * ```mount /dev/sda1 /media/usbdrive || mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
+ 
+* Execute this command to run the rest of the automatic gateway setup:
+  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh``` 
+
+* **Wi-Fi Configuration (OPTIONAL)**
+* To connect the gateway to the wireless network, execute this command command:
+  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Wifi_Setup.sh```
+ 
+* The main IoTConnect program has been configured to run on boot, so now reboot the gateway with the command:
+  * ```reboot```   
 
 ## Step 9: View the Data
 * Navigate back to the “Device” menu and select your device named "STM32MP157F" (or your custom Display Name if you did not use the default).
