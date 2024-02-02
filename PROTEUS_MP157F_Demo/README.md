@@ -205,7 +205,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
       * ```mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
  
 * Execute this command to run the rest of the automatic gateway setup:
-  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh``` 
+  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh```
+  * **NOTE: This setup script will take several minutes to complete.**
 
 * **Wi-Fi Configuration (OPTIONAL)**
 * To connect the gateway to the wireless network, execute this command command:
