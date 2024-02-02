@@ -169,7 +169,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * Copy your two individual device certificates from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual *.pem* and *.crt* files.**
 
-* Back in the *PROTEUS_MP157F_Demo* directory, open up the file config.py in a generic text editor.
+* Back in the *PROTEUS_MP157F_Demo* directory, open up the file *config.py* in a generic text editor.
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
@@ -179,13 +179,13 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image10.png"/>
 
-* Copy your CPID and Environment into the *cpid* and *env* fields of config.py, **within the quotation marks.**
+* Copy your CPID and Environment into the *cpid* and *env* fields of *config.py*, **within the quotation marks.**
 
 * Enter the Unique ID for your device from step 4 into the *unique_id* field, **within the quotation marks.**
 
 * Ignore the *gateway_sw_version* and *proteus_fw_version* fields for now.
 
-* Save the config.py file and close the text editor.
+* Save the *config.py* file and close the text editor.
 
 * Now remove the flash drive from your PC and insert it into a USB port on the STM32MP157F-DK2 gateway.
 
