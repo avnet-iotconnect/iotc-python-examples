@@ -27,9 +27,9 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/Demo/" + UniqueId + "-certificates/pk_" + UniqueId + ".pem", 
-		"SSLCertPath" : "/home/weston/Demo/" + UniqueId + "-certificates/cert_" + UniqueId + ".crt",
-		"SSLCaPath"   : "/home/weston/Demo/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLKeyPath"  : "/home/weston/Proteus_MP157F_Demo/device_certificates/pk_" + UniqueId + ".pem", 
+		"SSLCertPath" : "/home/weston/Proteus_MP157F_Demo/device_certificates/cert_" + UniqueId + ".crt",
+		"SSLCaPath"   : "/home/weston/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
