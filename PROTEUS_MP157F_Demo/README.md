@@ -163,7 +163,11 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 <img src=".//media/image_a.png"/>
 
-* Unzip the downloaded folder and then open it. Navigate to the *iotc-python-examples-main* directory (the name of the overall repo and the first sub-directory will have the same name), and then copy the *PROTEUS_MP157F_Demo* folder to a flash drive. This is the only part of the repository you will need for this demo.
+* Unzip the downloaded folder and then open it.
+  
+* Navigate to the *iotc-python-examples-main* directory (the name of the overall repo and the first sub-directory will have the same name)
+  
+* Copy the *PROTEUS_MP157F_Demo* folder to a flash drive. This is the only part of the repository you will need for this demo.
 
 * In the *PROTEUS_MP157F_Demo* directory on your flash drive, navigate to the *device_certificates* folder.
 
