@@ -158,7 +158,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
    * You will also need to connect the STM32MP157 Discovery kit to your PC using a USB-A to micro-USB cable. Connect to the assigned COM Port using serial console application, such as [Tera Term](https://ttssh2.osdn.jp/index.html.en), or a browser application like [Google Chrome Labs Serial Terminal](https://googlechromelabs.github.io/serial-terminal/). Optionally, you may connect the board to an external monitor using the HMDI port and a keyboard/mouse.
       
 
-## Step 7: Gather Necessary Files
+## Step 7: Prepare Necessary Files
 * In another browser tab, navigate to [the top of this repository] (https://github.com/avnet-iotconnect/iotc-python-examples/tree/main) and download the repository's zip file as shown here:
 
 <img src=".//media/image_a.png"/>
@@ -181,7 +181,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * Copy your CPID and Environment into the *cpid* and *env* fields of *config.py*, **within the quotation marks.**
 
-* Enter the Unique ID for your device from step 4 into the *unique_id* field, **within the quotation marks.**
+* Enter the Unique ID for your device from Step 4 into the *unique_id* field, **within the quotation marks.**
 
 * Ignore the *gateway_sw_version* and *proteus_fw_version* fields for now.
 
