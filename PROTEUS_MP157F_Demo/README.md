@@ -213,8 +213,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
   * **NOTE: This setup script will take several minutes to complete.**
 
 * **Wi-Fi Configuration (OPTIONAL)**
-* To connect the gateway to the wireless network, execute this command command:
-  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Wifi_Setup.sh```
+  * To connect the gateway to the wireless network, execute this command command:
+    * ```/media/usbdrive/PROTEUS_MP157F_Demo/Wifi_Setup.sh```
  
 * The main IoTConnect program has been configured to run on boot, so now reboot the gateway with the command:
   * ```reboot```   
