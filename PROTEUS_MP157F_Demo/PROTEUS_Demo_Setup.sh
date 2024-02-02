@@ -12,4 +12,3 @@ pip3 install bleak
 cp -r /media/usbdrive/PROTEUS_MP157F_Demo /home/weston
 cd /home/weston/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/iotconnect-sdk-1.0
 python3 setup.py install
-(crontab -l 2>/dev/null; echo "@reboot python3 /home/weston/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/STM32MP157F-DK2_PROTEUS_Demo.py") | crontab -
