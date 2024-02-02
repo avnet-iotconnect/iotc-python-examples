@@ -202,7 +202,7 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * Now, mount the flash drive using this command:
   * ```mount /dev/sda1 /media/usbdrive```
     * If that command fails (will only fail if you have plugged/unplugged the flash drive from the gateway more than once), use this longer command instead:
-      * ```mount /dev/sda1 /media/usbdrive || mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
+      * ```mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
  
 * Execute this command to run the rest of the automatic gateway setup:
   * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh``` 
