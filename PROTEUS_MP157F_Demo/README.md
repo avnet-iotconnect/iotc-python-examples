@@ -194,15 +194,15 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * These steps can be completed using the serial terminal connected to the ST Discovery board, or using the weston terminal directly on the gateway.
 
 * First, get admin privileges by entering this command:
-* ```su```
+  * ```su```
 
 * Create a directory for the flash drive to mount to with this command:
-* ```mkdir /media/usbdrive```
+  * ```mkdir /media/usbdrive```
 
 * Now, mount the flash drive using this command:
-* ```mount /dev/sda1 /media/usbdrive```
-  * If that command fails (will only fail if you have plugged/unplugged the flash drive from the gateway more than once), use this longer command instead:
-  * ```mount /dev/sda1 /media/usbdrive || mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
+  * ```mount /dev/sda1 /media/usbdrive```
+    * If that command fails (will only fail if you have plugged/unplugged the flash drive from the gateway more than once), use this longer command instead:
+      * ```mount /dev/sda1 /media/usbdrive || mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
  
 * Execute this command to run the rest of the automatic gateway setup:
   * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh``` 
