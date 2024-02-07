@@ -1,6 +1,5 @@
 #!/bin/bash
 
-su
 apt-get update
 apt-get upgrade -y
 apt-get install python3-pip -y
