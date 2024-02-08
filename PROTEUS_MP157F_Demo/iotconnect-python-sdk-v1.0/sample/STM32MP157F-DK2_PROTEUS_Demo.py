@@ -133,9 +133,9 @@ def main():
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-		if fw == "Standard":
-		    proteus_thread = threading.Thread(target=proteus_standard_plugin.proteus_loop)
-		else:
+                if fw == "Standard":
+                    proteus_thread = threading.Thread(target=proteus_standard_plugin.proteus_loop)
+                else:
                     proteus_thread = threading.Thread(target=proteus_AI_plugin.proteus_loop)
                 proteus_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
@@ -145,14 +145,14 @@ def main():
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
-		    if fw == "Standard":
-		        dObj = [{
-			    "uniqueId": UniqueId,
-			    "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+                    if fw == "Standard":
+                        dObj = [{
+                            "uniqueId": UniqueId,
+                            "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
 			    #Access updated data dictionary from plugin file
-			    "data": proteus_standard_plugin.telemetry
-		        }]
-		    else:
+                            "data": proteus_standard_plugin.telemetry
+                        }]
+                    else:
                         dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
