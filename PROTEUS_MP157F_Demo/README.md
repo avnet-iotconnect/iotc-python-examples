@@ -207,15 +207,15 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
   * ```mount /dev/sda1 /media/usbdrive```
     * If that command fails (will only fail if you have plugged/unplugged the flash drive from the gateway more than once), use this longer command instead:
       * ```mount /dev/sdb1 /media/usbdrive || mount /dev/sdc1 /media/usbdrive || mount /dev/sdd1 /media/usbdrive```
- 
-* Execute this command to run the rest of the automatic gateway setup:
-  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh```
-  * **NOTE: This setup script will take several minutes to complete.**
 
 * **Wi-Fi Configuration (OPTIONAL)**
   * To connect the gateway to the wireless network, execute this command:
     * ```/media/usbdrive/PROTEUS_MP157F_Demo/Wifi_Setup.sh```
-      * NOTE: You will be asked to enter your network SSID and password during this script 
+      * NOTE: You will be asked to enter your network SSID and password during this script
+ 
+* Execute this command to run the rest of the automatic gateway setup:
+  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh```
+  * **NOTE: This setup script will take several minutes to complete.** 
  
 * The main IoTConnect program has been configured to run on boot, so now reboot the gateway with the command:
   * ```reboot```   
