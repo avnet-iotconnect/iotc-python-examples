@@ -211,7 +211,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 * **Wi-Fi Configuration (OPTIONAL)**
   * To connect the gateway to the wireless network, execute this command:
     * ```/media/usbdrive/PROTEUS_MP157F_Demo/Wifi_Setup.sh```
-      * NOTE: You will be asked to enter your network SSID and password during this script
+      * NOTE: You will be asked to enter your network SSID and password during this script, as well as if it is your first time connecting the gateway to Wi-Fi
+        * If you have already connected the gateway to Wi-Fi before and need to change the SSID or password, simply run the script again and answer **Y** to the first prompt
  
 * Execute this command to run the rest of the automatic gateway setup:
   * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh```
