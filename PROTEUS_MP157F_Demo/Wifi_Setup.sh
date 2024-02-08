@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo Please type your wireless SSID (Wi-Fi network name) and press ENTER
+echo Please type your wireless network name, also known as the SSID, and press ENTER
 read $ssid
 echo Please type the password of this SSID and press ENTER
 read $password
