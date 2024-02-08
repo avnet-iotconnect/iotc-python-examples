@@ -3,7 +3,7 @@
 while true; do
     echo "Have you set up wifi on this device before and just need to change the SSID/Password? Type 'Y' for YES or 'N' for NO and then press ENTER"
     read response
-    if [ "$response" != "N" -a  "$response" != "Y"]; then
+    if [ "$response" != "N" -a  "$response" != "Y" ]; then
        echo "Entry must be Y or N"
        continue # Go to the top of the loop
     fi
