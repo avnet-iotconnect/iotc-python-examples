@@ -80,6 +80,8 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
   
 * After the sensor kit is assembled, power the board with a Micro-USB cable. While the device has a battery, its level of charge when it comes from the manufacturer can vary.
 
+* If you want to use the FP-AI-PDMWBSOC function pack for this demo, you will need to follow [this guide](https://github.com/avnet-iotconnect/iotc-python-examples/blob/main/PROTEUS_MP157F_Demo/FP-AI-PDMWBSOC_Setup.md) to set up your PROTEUS correctly. The standard demo is set up to use the firmware that comes on the PROTEUS by default.
+
 * Using a small flathead screwdriver (the kind you might use to repair a set of eyeglasses), a straightened paperclip, or some type of small blunt pin, press and hold the S2 power switch down for 3 seconds. If you have the device sitting right-side-up on a desk with the Micro-USB connector facing to your left, the S2 button will be accessed through the only slot in the plastic casing that is facing you.
 
 <img src=".//media/image35.png"/>
