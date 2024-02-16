@@ -81,18 +81,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
    * pk_<UniqueID/DisplayName>.pem
    * cert_<UniqueID/DisplayName>.crt
 
-## Step 5: MKBOXPRO Sensor Setup
-* For assembly, follow section 4.1 in the provided [getting started document](https://www.st.com/resource/en/user_manual/um3000-getting-started-with-the-stevalproteus1-evaluation-kit-for-condition-monitoring-based-on-the-24-ghz-stm32wb5mmg-module-stmicroelectronics.pdf) for the PROTEUS. Getting the battery connector to solidly seat into its slot on the main board is a bit tricky, so make sure you take your time on that step.
-  
-* After the sensor kit is assembled, power the board with a Micro-USB cable. While the device has a battery, its level of charge when it comes from the manufacturer can vary.
-
-* Using a small flathead screwdriver (the kind you might use to repair a set of eyeglasses), a straightened paperclip, or some type of small blunt pin, press and hold the S2 power switch down for 3 seconds. If you have the device sitting right-side-up on a desk with the Micro-USB connector facing to your left, the S2 button will be accessed through the only slot in the plastic casing that is facing you.
-
-<img src=".//media/image35.png"/>
-
-* At this point, your PROTEUS sensor kit is ready for use.
-
-## Step 6: Flash IoTConnect-Compatible Image to STM32MP157F-DK2 Board
+## Step 5: Flash IoTConnect-Compatible Image to STM32MP157F-DK2 Board
 * To download the zipped image folder, [click here](https://saleshosted.z13.web.core.windows.net/sdk/st/stmp1/proteus/OSTL_6.1_IoTConnect_Compatible.zip).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
@@ -188,7 +177,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
       * If it is working, the output will show repetitive pings back to the site. If there is no periodic output and the command times out, there is a problem.  
   * Your device will also automatically reconnect to the wifi after rebooting.  
 
-## Step 7: Gather Files and Set Up Software
+## Step 6: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```su```
    * ```apt-get update```
@@ -216,7 +205,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
  
-## Step 8: Run the Demo
+## Step 7: Run the Demo
 * To actually start the demo, first navigate to the project sample directory with this command:
 
  ```cd iotconnect-python-sdk-v1.0/sample```
@@ -245,7 +234,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
 
 <img src=".//media/image10.png"/>
 
-## Step 9: View the Data
+## Step 8: View the Data
 * Navigate back to the “Device” menu and select your device named "STM32MP157F" (or your custom Display Name if you did not use the default).
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
