@@ -20,12 +20,18 @@ telemetry = {
     "battery_percentage":0,
     "battery_voltage":0,
     "battery_current":0,
-    "battery_status": "Not_Available"
+    "battery_status":"Not_Available",
+    "phase":"Not yet specified",
+    "state":"Not yet specified",
+    "progress_percentage":0,
+    "anomaly_status":"Not yet specified",
+    "similarity_percentage":0
 }
 
 
 #These are the UUIDs of the BLE characteristics we use for the PROTEUS in this demo
 battery_characteristic = "00020000-0001-11e1-ac36-0002a5d5c51b"
+anomaly_detection_characteristic = "00000019-0002-11e1-ac36-0002a5d5c51b"
 
 
 #This function resets the bluetooth system to make 
@@ -50,6 +56,18 @@ def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray
     status_options = ["Low Battery", "Discharging", "Plugged not Charging", "Charging", "Unknown"]
     telemetry["battery_status"] = status_options[data[8]]
 
+#This function is called whenever a BLE packet from the anomaly detection characteristic UUID is received
+def anomaly_detection_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
+    global telemetry
+    #Decode the anomaly detection data and update the appropriate values in the telemetry dictionary
+    phase_options = ["Idle", "Learning", "Detecting"]
+    telemetry["phase"] = phase_options[data[4]]
+    state_options = ["NEAI_OK"]
+    telemetry["state"] = state_options[data[5]]
+    telemetry["progress_percentage"] = int.from_bytes(data[6], "little")
+    anomaly_status_options = ["Normal", "Anomaly"]
+    telemetry["anomaly_status"] = anomaly_status_options[data[7]]
+    telemetry["similarity_percentage"] = int.from_bytes(data[8], "little")
 
 #This asynchronous function connects the gateway to the PROTEUS via BLE 
 #and turns on the notifications for the desired characteristics
