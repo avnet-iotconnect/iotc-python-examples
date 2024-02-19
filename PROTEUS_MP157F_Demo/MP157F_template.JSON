@@ -2,7 +2,6 @@
     "code": "MP157F",
     "name": "MP157F",
     "authType": 2,
-    "isIotEdgeEnable": false,
     "attributes": [
         {
             "name": "accel_x_mGs",
@@ -219,14 +218,54 @@
             "type": "DECIMAL",
             "description": null,
             "unit": null
+        },
+        {
+            "name": "NEAI_phase",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_state",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_progress_percentage",
+            "type": "INTEGER",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_status",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_similarity_percentage",
+            "type": "INTEGER",
+            "description": null,
+            "unit": null
+        }
+    ],
+    "commands": [
+        {
+            "name": "LEDGreen",
+            "command": "ledgreen",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
         }
     ],
     "messageVersion": "2.1",
     "msgCode": "XG4E2ZT",
     "greenGrass": "0",
+    "wireless": "0",
     "properties": {
         "description": null,
-        "dataFrequency": "60",
+        "dataFrequency": "5",
         "fileSupport": false
     },
     "_meta": {
