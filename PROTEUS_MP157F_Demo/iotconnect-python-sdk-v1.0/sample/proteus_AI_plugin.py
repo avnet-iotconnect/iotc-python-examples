@@ -3,6 +3,7 @@ from bleak import BleakClient, BleakScanner
 from bleak.backends.characteristic import BleakGATTCharacteristic
 import time
 import sys
+import pexpect
 
 # Anomaly Detection mode can either be "Learning" or "Detection"
 AD_Mode = "Learning"
