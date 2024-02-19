@@ -84,6 +84,7 @@ async def proteus_functionality():
         print("Connected")
 	#Turn on notifications for the desire characteristics
         await client.start_notify(battery_characteristic, battery_data_handler)
+        await client.start_notify(anomaly_detection_characteristic, anomaly_detection_data_handler)
 	# Start an infinite loop so that notifications are received forever (until the program is shut down)
         while True:
             await asyncio.sleep(1)
