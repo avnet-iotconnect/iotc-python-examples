@@ -3,14 +3,14 @@
 while true; do
     echo "Have you set up wifi on this device before and just need to change the SSID/Password? Type 'Y' for YES or 'N' for NO and then press ENTER"
     read response
-    if [ "$response" != "N" -a  "$response" != "Y" ]; then
+    if [ "$response" != "N" -a  "$response" != "Y" -a "$response" != "n" -a  "$response" != "y"]; then
        echo "Entry must be Y or N"
        continue # Go to the top of the loop
     fi
     break # Valid input given so exit the loop.
 done
 
-if [ "$response" == "Y" ]; then
+if [ "$response" == "Y" -o "$response" == "y" ]; then
     systemctl stop wpa_supplicant@wlan0.service
     systemctl disable wpa_supplicant@wlan0.service
     rm -r /etc/wpa_supplicant
