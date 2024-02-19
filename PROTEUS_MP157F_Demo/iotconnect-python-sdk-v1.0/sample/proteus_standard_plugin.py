@@ -3,6 +3,7 @@ from bleak import BleakClient, BleakScanner
 from bleak.backends.characteristic import BleakGATTCharacteristic
 import time
 import sys
+import pexpect
 
 #This dictionary is what the main loop of the main 
 #program will periodcially send as telemetry to IoTConnect
