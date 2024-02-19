@@ -59,12 +59,21 @@ def anomaly_detection_data_handler(characteristic: BleakGATTCharacteristic, data
     global telemetry
     #Decode the anomaly detection data and update the appropriate values in the telemetry dictionary
     NEAI_phase_options = ["Idle", "Learning", "Detecting"]
-    telemetry["NEAI_phase"] = NEAI_phase_options[data[4]]
+    if data[4] != 0xFF:
+        telemetry["NEAI_phase"] = NEAI_phase_options[data[4]]
+    else:
+        telemetry["NEAI_phase"] = "Not currently available"
     NEAI_state_options = ["NEAI_OK"]
-    telemetry["NEAI_state"] = NEAI_state_options[data[5]]
+    if data[5] != 0xFF:
+        telemetry["NEAI_state"] = NEAI_state_options[data[5]]
+    else:
+        telemetry["NEAI_state"] = "Not currently available"
     telemetry["NEAI_progress_percentage"] = int.from_bytes(data[6], "little")
     NEAI__status_options = ["Normal", "Anomaly"]
-    telemetry["NEAI_status"] = NEAI_status_options[data[7]]
+    if data[7] != 0xFF:
+        telemetry["NEAI_status"] = NEAI_status_options[data[7]]
+    else:
+        telemetry["NEAI_status"] = "Not currently available"
     telemetry["NEAI_similarity_percentage"] = int.from_bytes(data[8], "little")
 
 #This asynchronous function connects the gateway to the PROTEUS via BLE 
