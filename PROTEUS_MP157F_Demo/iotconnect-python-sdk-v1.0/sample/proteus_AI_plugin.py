@@ -21,11 +21,11 @@ telemetry = {
     "battery_voltage":0,
     "battery_current":0,
     "battery_status":"Not_Available",
-    "phase":"Not yet specified",
-    "state":"Not yet specified",
-    "progress_percentage":0,
-    "anomaly_status":"Not yet specified",
-    "similarity_percentage":0
+    "NEAI_phase":"Not yet specified",
+    "NEAI_state":"Not yet specified",
+    "NEAI_progress_percentage":0,
+    "NEAI_status":"Not yet specified",
+    "NEAI_similarity_percentage":0
 }
 
 
@@ -60,14 +60,14 @@ def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray
 def anomaly_detection_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     global telemetry
     #Decode the anomaly detection data and update the appropriate values in the telemetry dictionary
-    phase_options = ["Idle", "Learning", "Detecting"]
-    telemetry["phase"] = phase_options[data[4]]
-    state_options = ["NEAI_OK"]
-    telemetry["state"] = state_options[data[5]]
-    telemetry["progress_percentage"] = int.from_bytes(data[6], "little")
-    anomaly_status_options = ["Normal", "Anomaly"]
-    telemetry["anomaly_status"] = anomaly_status_options[data[7]]
-    telemetry["similarity_percentage"] = int.from_bytes(data[8], "little")
+    NEAI_phase_options = ["Idle", "Learning", "Detecting"]
+    telemetry["NEAI_phase"] = NEAI_phase_options[data[4]]
+    NEAI_state_options = ["NEAI_OK"]
+    telemetry["NEAI_state"] = NEAI_state_options[data[5]]
+    telemetry["NEAI_progress_percentage"] = int.from_bytes(data[6], "little")
+    NEAI__status_options = ["Normal", "Anomaly"]
+    telemetry["NEAI_status"] = NEAI_status_options[data[7]]
+    telemetry["NEAI_similarity_percentage"] = int.from_bytes(data[8], "little")
 
 #This asynchronous function connects the gateway to the PROTEUS via BLE 
 #and turns on the notifications for the desired characteristics
