@@ -12,7 +12,7 @@ import proteus_standard_plugin
 sys.path.append("/home/weston/PROTEUS_MP157F_Demo")
 import config
 
-# Get CPID, Environment, uniqueID, and proteus FW values from command-line options
+# Get CPID, Environment, uniqueID, and proteus FW values from config file
 cpid = config.cpid
 env = config.env
 UniqueId = config.unique_id
