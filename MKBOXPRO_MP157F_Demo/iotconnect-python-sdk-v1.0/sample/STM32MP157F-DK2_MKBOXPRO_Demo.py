@@ -7,16 +7,14 @@ from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
 import getopt
-import proteus_AI_plugin
-import proteus_standard_plugin
-sys.path.append("/home/weston/PROTEUS_MP157F_Demo")
+import mkboxpro_plugin
+sys.path.append("/home/weston/MKBOXPRO_MP157F_Demo")
 import config
 
-# Get CPID, Environment, uniqueID, and proteus FW values from command-line options
+# Get CPID, Environment, and uniqueID values from config file
 cpid = config.cpid
 env = config.env
 UniqueId = config.unique_id
-fw = config.proteus_fw_version
 	
 SId = ""
 Sdk=None
@@ -27,9 +25,9 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/PROTEUS_MP157F_Demo/device_certificates/pk_" + UniqueId + ".pem", 
-		"SSLCertPath" : "/home/weston/PROTEUS_MP157F_Demo/device_certificates/cert_" + UniqueId + ".crt",
-		"SSLCaPath"   : "/home/weston/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLKeyPath"  : "/home/weston/MKBOXPRO_MP157F_Demo/device_certificates/pk_" + UniqueId + ".pem", 
+		"SSLCertPath" : "/home/weston/MKBOXPRO_MP157F_Demo/device_certificates/cert_" + UniqueId + ".crt",
+		"SSLCaPath"   : "/home/weston/MKBOXPRO_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
@@ -133,11 +131,8 @@ def main():
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-                if fw == "Standard":
-                    proteus_thread = threading.Thread(target=proteus_standard_plugin.proteus_loop)
-                else:
-                    proteus_thread = threading.Thread(target=proteus_AI_plugin.proteus_loop)
-                proteus_thread.start()
+                mkboxpro_thread = threading.Thread(target=mkboxpro_plugin.mkboxpro_loop)
+                mkboxpro_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
                 Sdk.onOTACommand(DeviceFirmwareCallback)
@@ -145,20 +140,12 @@ def main():
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
-                    if fw == "Standard":
-                        dObj = [{
-                            "uniqueId": UniqueId,
-                            "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-			    #Access updated data dictionary from plugin file
-                            "data": proteus_standard_plugin.telemetry
-                        }]
-                    else:
-                        dObj = [{
-                            "uniqueId": UniqueId,
-                            "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-			    #Access updated data dictionary from plugin file
-                            "data": proteus_AI_plugin.telemetry
-                        }]
+                    dObj = [{
+                        "uniqueId": UniqueId,
+                        "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+			#Access updated data dictionary from plugin file
+                        "data": mkboxpro_plugin.telemetry
+                    }]
                     sendBackToSDK(Sdk, dObj)
                     
             except KeyboardInterrupt:
