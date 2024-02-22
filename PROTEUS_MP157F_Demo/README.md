@@ -189,8 +189,6 @@ For this demo, predictive motor maintenance data is being collected via bluetoot
 
 * Enter the Unique ID for your device from Step 4 into the *unique_id* field, **within the quotation marks.**
 
-* Ignore the *gateway_sw_version* field.
-
 * If preparing the demo to showcase the the FP-AI-PDMWBSOC function pack, change the *proteus_fw_version* field from "Standard" to "AI"
   * If preparing the demo to showcase the default PROTEUS firmware, leave this field as "Standard"
 
