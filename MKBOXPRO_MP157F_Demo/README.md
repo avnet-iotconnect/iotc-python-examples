@@ -73,13 +73,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
 
 <img src=".//media/image8.png"/>
 
-* Extract the certificate package folder and copy the resulting certificates folder to a USB Storage Drive (flash drive). If using the default configuration, the folder should be named “STM32MP157F-certificates” and should include:
-   * pk_STM32MP157F.pem
-   * cert_STM32MP157F.crt
- 
-* If using a custom UniqueID/DisplayName (denoted as <UniqueID/DisplayName>), the folder should be named “<UniqueID/DisplayName>-certificates” and should include:
-   * pk_<UniqueID/DisplayName>.pem
-   * cert_<UniqueID/DisplayName>.crt
+* Extract the certificate package folder and save the resulting certificates folder to a known location. You will relocate them later into the setup.
 
 ## Step 5: MKBOXPRO Sensor Setup
 * Power your MKBOXPRO Sensor pack with 5VDC using a USB-C cable.
