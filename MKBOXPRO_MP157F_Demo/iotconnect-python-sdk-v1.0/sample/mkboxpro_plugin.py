@@ -26,11 +26,9 @@ telemetry = {
 }
 
 #These are the UUIDs of the BLE characteristics we use for the MKBOXPRO in this demo
-temperature_characteristic = "00040000-0001-11e1-ac36-0002a5d5c51b"
-accel_and_gyro_characteristic =  "00c00000-0001-11e1-ac36-0002a5d5c51b"
+temperature_pressure_characteristic = "00140000-0001-11e1-ac36-0002a5d5c51b"
+accel_gyro_magnet_characteristic =  "00e00000-0001-11e1-ac36-0002a5d5c51b"
 battery_characteristic = "00020000-0001-11e1-ac36-0002a5d5c51b"
-magnetometer_characteristic = "00200000-0001-11e1-ac36-0002a5d5c51b"
-pressure_characteristic = "00100000-0001-11e1-ac36-0002a5d5c51b"
 
 #This function resets the bluetooth system to make 
 #sure that no devices are connected at the start of the program
@@ -44,18 +42,12 @@ def setup_bluetooth():
     setup_process.close()
 
 
-#This function is called whenever a BLE packet from the temperature characteristic UUID is received
-def temperature_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
+#This function is called whenever a BLE packet from the temperature/pressure characteristic UUID is received
+def temperature_pressure_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
     global telemetry
     #Decode the temperature data and update the appropriate value in the telemetry dictionary
-    telemetry["temperature_deg_C"] = int.from_bytes(data[2:4], "little")/10.0
-
-
-#This function is called whenever a BLE packet from the pressure characteristic UUID is received
-def pressure_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray):
-    global telemetry
-    #Decode the pressure data and update the appropriate value in the telemetry dictionary
     telemetry["pressure_mBar"] = int.from_bytes(data[2:6], "little")/100.0
+    telemetry["temperature_deg_C"] = int.from_bytes(data[6:8], "little")/10.0
 
 
 #This function is called whenever a BLE packet from the battery characteristic UUID is received
@@ -69,25 +61,19 @@ def battery_data_handler(characteristic: BleakGATTCharacteristic, data:bytearray
     telemetry["battery_status"] = status_options[data[8]]
 
 
-#This function is called whenever a BLE packet from the accelerometer/gyroscope characteristic UUID is received
-def accel_gyro_data_handler(characteristic: BleakGATTCharacteristic, data: bytearray):
+#This function is called whenever a BLE packet from the accelerometer/gyroscope/magnetometer characteristic UUID is received
+def accel_gyro_magnet_data_handler(characteristic: BleakGATTCharacteristic, data: bytearray):
     global telemetry
     #Decode the accelerometer/gyroscope domain data and update the appropriate values in the telemetry dictionary
-    telemetry["accel_x_mGs"] = int.from_bytes(data[2:4], byteorder='little', signed=True)/1000.0
-    telemetry["accel_y_mGs"] = int.from_bytes(data[4:6], byteorder='little', signed=True)/1000.0
-    telemetry["accel_z_mGs"] = int.from_bytes(data[6:8], byteorder='little', signed=True)/1000.0
-    telemetry["gyro_x_dps"] = int.from_bytes(data[8:10], byteorder='little', signed=True)/10.0
-    telemetry["gyro_y_dps"] = int.from_bytes(data[10:12], byteorder='little', signed=True)/10.0
-    telemetry["gyro_z_dps"] = int.from_bytes(data[12:14], byteorder='little', signed=True)/10.0
-
-
-#This function is called whenever a BLE packet from the magnetometer characteristic UUID is received
-def magnet_data_handler(characteristic: BleakGATTCharacteristic, data: bytearray):
-    global telemetry
-    #Decode the accelerometer/gyroscope domain data and update the appropriate values in the telemetry dictionary
-    telemetry["magnet_x_mGa"] = int.from_bytes(data[2:4], byteorder='little', signed=True)
-    telemetry["magnet_y_mGa"] = int.from_bytes(data[4:6], byteorder='little', signed=True)
-    telemetry["magnet_z_mGa"] = int.from_bytes(data[6:8], byteorder='little', signed=True)
+    telemetry["accel_x_mGs"] = int.from_bytes(data[2:4], byteorder='little', signed=True)
+    telemetry["accel_y_mGs"] = int.from_bytes(data[4:6], byteorder='little', signed=True)
+    telemetry["accel_z_mGs"] = int.from_bytes(data[6:8], byteorder='little', signed=True)
+    telemetry["gyro_x_dps"] = int.from_bytes(data[8:10], byteorder='little', signed=True)
+    telemetry["gyro_y_dps"] = int.from_bytes(data[10:12], byteorder='little', signed=True)
+    telemetry["gyro_z_dps"] = int.from_bytes(data[12:14], byteorder='little', signed=True)
+    telemetry["magnet_x_mGa"] = int.from_bytes(data[14:16], byteorder='little', signed=True)
+    telemetry["magnet_y_mGa"] = int.from_bytes(data[16:18], byteorder='little', signed=True)
+    telemetry["magnet_z_mGa"] = int.from_bytes(data[18:20], byteorder='little', signed=True)
 
 
 #This asynchronous function connects the gateway to the MKBOXPRO via BLE 
@@ -106,10 +92,8 @@ async def mkboxpro_functionality():
     async with BleakClient(device) as client:
         print("Connected")
 	#Turn on notifications for the desire characteristics
-        await client.start_notify(accel_and_gyro_characteristic, accel_gyro_data_handler)
-        await client.start_notify(magnetometer_characteristic, magnet_data_handler)
-        await client.start_notify(pressure_characteristic, pressure_data_handler)
-        await client.start_notify(temperature_characteristic, temperature_data_handler)
+        await client.start_notify(accel_gyro_magnet_characteristic, accel_gyro_magnet_data_handler)
+        await client.start_notify(temperature_pressure_characteristic, temperature_pressure_data_handler)
         await client.start_notify(battery_characteristic, battery_data_handler)
 	# Start an infinite loop so that notifications are received forever (until the program is shut down)
         while True:
