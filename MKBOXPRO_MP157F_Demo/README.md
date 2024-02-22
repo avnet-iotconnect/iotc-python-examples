@@ -242,7 +242,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
       * If you have already connected the gateway to Wi-Fi before and need to change the SSID or password, simply run the script again and answer **Y** to the first prompt
      
 * Execute this command to run the rest of the automatic gateway setup:
-  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Proteus_Demo_Setup.sh```
+  * ```/media/usbdrive/MKBOXPRO_MP157F_Demo/MKBOXPRO_Demo_Setup.sh```
   * **NOTE: This setup script will take several minutes to complete.** 
  
 * The main IoTConnect program has been configured to run on boot, so now reboot the gateway with the command:
