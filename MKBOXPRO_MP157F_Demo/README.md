@@ -81,7 +81,48 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
    * pk_<UniqueID/DisplayName>.pem
    * cert_<UniqueID/DisplayName>.crt
 
-## Step 5: Flash IoTConnect-Compatible Image to STM32MP157F-DK2 Board
+## Step 5: MKBOXPRO Sensor Setup
+* Power your MKBOXPRO Sensor pack with 5VDC using a USB-C cable.
+* To ensure that your MKBOXPRO is running the firmware compatible with this demo, you will need to download and use the ST BLE Senor Classic mobile app (available on Android and iOS)
+  * **NOTE: Make sure you download the "Classic" version of the app. There is a version just called "ST BLE Sensor" which is not compatible with this demo.**
+* Turn on Bluetooth on your mobile device, and open the ST BLE Sensor Classic app.
+* On the home page, click on the "Connect to a device" icon and then you should see your MKBOXPRO show up as the app scans for ST BLE devices, like this:
+
+  <img src=".//media/stble_1.png"/>
+
+* Click on your device, and then in the resulting screen, select the 3 dots in the lower-right corner of your screen
+
+  <img src=".//media/stble_2.png"/>
+
+* On the resulting screen, select "Board Configuration"
+
+<img src=".//media/stble_3.png"/>
+
+* Next, scroll down and select "Firmware Download"
+
+<img src=".//media/stble_4.png"/>
+
+* In the resulting screen, select the downward-pointing chevron to the right of the text "Not Selected"
+
+<img src=".//media/stble_5.png"/>
+
+* Now select the firmware pack called "FP-SNS-STBOX1_BLESensors v1.5.0"
+
+<img src=".//media/stble_6.png"/>
+
+* Now select "Swap to this Bank"
+
+<img src=".//media/stble_7.png"/>
+
+* You will be taken back to the Board Configuration menu. Select "Firmware Swap"
+
+<img src=".//media/stble_8.png"/>
+
+* The MKBOXPRO will boot up with the new firmware pack after the current Bluetooth connection is terminated, so close out of the ST BLE Sensor Classic app to do this.
+
+* Your MKBOXPRO should now be ready for the demo.
+
+## Step 6: Flash IoTConnect-Compatible Image to STM32MP157F-DK2 Board
 * To download the zipped image folder, [click here](https://saleshosted.z13.web.core.windows.net/sdk/st/stmp1/proteus/OSTL_6.1_IoTConnect_Compatible.zip).
 * Unzip the folder to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
@@ -177,7 +218,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
       * If it is working, the output will show repetitive pings back to the site. If there is no periodic output and the command times out, there is a problem.  
   * Your device will also automatically reconnect to the wifi after rebooting.  
 
-## Step 6: Gather Files and Set Up Software
+## Step 7: Gather Files and Set Up Software
 * Open a terminal window and run these commands in this order:
    * ```su```
    * ```apt-get update```
@@ -205,7 +246,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
    * ```./STM32MP157_setup.sh```
       * When prompted, insert your flash drive containing your device certificates into a USB port on the ST32MP157F-DK2. 
  
-## Step 7: Run the Demo
+## Step 8: Run the Demo
 * To actually start the demo, first navigate to the project sample directory with this command:
 
  ```cd iotconnect-python-sdk-v1.0/sample```
@@ -234,7 +275,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
 
 <img src=".//media/image10.png"/>
 
-## Step 8: View the Data
+## Step 9: View the Data
 * Navigate back to the “Device” menu and select your device named "STM32MP157F" (or your custom Display Name if you did not use the default).
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
