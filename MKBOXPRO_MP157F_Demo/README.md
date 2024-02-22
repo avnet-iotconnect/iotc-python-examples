@@ -61,7 +61,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
    * Entity: (Any Generic Entity Will Work)
    * Template: MP157F
  
-      * **NOTE: This demo is deisgned for the Unique ID and the Display Name to be exactly the same, so it is critical that you make them identical to each other. It will not work otherwise.**
+      * **NOTE: For setup simplicity, this demo is deisgned for the Unique ID and the Display Name to be exactly the same, so it is critical that you make them identical to each other. It will not work otherwise.**
  
 <img src=".//media/image6.png"/>
 
