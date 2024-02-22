@@ -96,8 +96,8 @@ async def mkboxpro_functionality():
     #Reset the bluetooth system
     setup_bluetooth()
     print("starting scan...")
-    #Scan for the PROTEUS BLE device by name
-    device = await BleakScanner.find_device_by_name("PROTEUS")
+    #Scan for the PMKBOXPRO BLE device by name
+    device = await BleakScanner.find_device_by_name("BLEPnP")
     if device is None:
         print("ERROR: could not find device with name '%s'", args.name)
         return
