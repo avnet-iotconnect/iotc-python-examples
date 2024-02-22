@@ -196,13 +196,13 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
   
 * Navigate to the *iotc-python-examples-main* directory (the name of the overall repo and the first sub-directory will have the same name)
   
-* Copy the *PROTEUS_MP157F_Demo* folder to a flash drive. This is the only part of the repository you will need for this demo.
+* Copy the *MKBOXPRO_MP157F_Demo* folder to a flash drive. This is the only part of the repository you will need for this demo.
 
-* In the *PROTEUS_MP157F_Demo* directory on your flash drive, navigate to the *device_certificates* folder.
+* In the *MKBOXPRO_MP157F_Demo* directory on your flash drive, navigate to the *device_certificates* folder.
 
 * Copy your two individual device certificates from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual *.pem* and *.crt* files.**
 
-* Back in the *PROTEUS_MP157F_Demo* directory, open up the file *config.py* in a generic text editor.
+* Back in the *MKBOXPRO_MP157F_Demo* directory, open up the file *config.py* in a generic text editor.
 
 * To find your CPID and Environment, navigate to your main IoTConnect dashboard page, hover your curson over the gear icon on the tollbar located on the far-left side of the page, and then click "Key Vault":
 
@@ -215,11 +215,6 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
 * Copy your CPID and Environment into the *cpid* and *env* fields of *config.py*, **within the quotation marks.**
 
 * Enter the Unique ID for your device from Step 4 into the *unique_id* field, **within the quotation marks.**
-
-* Ignore the *gateway_sw_version* field.
-
-* If preparing the demo to showcase the the FP-AI-PDMWBSOC function pack, change the *proteus_fw_version* field from "Standard" to "AI"
-  * If preparing the demo to showcase the default PROTEUS firmware, leave this field as "Standard"
 
 * Save the *config.py* file and close the text editor.
 
@@ -242,7 +237,7 @@ For this demo, various types of sensor data is being collected via bluetooth (BL
 
 * **Wi-Fi Configuration (OPTIONAL)**
 * To connect the gateway to the wireless network, execute this command:
-  * ```/media/usbdrive/PROTEUS_MP157F_Demo/Wifi_Setup.sh```
+  * ```/media/usbdrive/MKBOXPRO_MP157F_Demo/Wifi_Setup.sh```
     * NOTE: You will be asked to enter your network SSID and password during this script, as well as if it is your first time connecting the gateway to Wi-Fi
       * If you have already connected the gateway to Wi-Fi before and need to change the SSID or password, simply run the script again and answer **Y** to the first prompt
  
