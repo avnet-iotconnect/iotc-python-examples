@@ -4,6 +4,7 @@ from bleak.backends.characteristic import BleakGATTCharacteristic
 import time
 import sys
 import pexpect
+import traceback
 
 def debug_print_to_file(target_string):
     timestamp = str(datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S") + " ///// " )
