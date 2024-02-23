@@ -8,6 +8,7 @@ from datetime import datetime
 import os
 import getopt
 import mkboxpro_plugin
+import traceback
 sys.path.append("/home/weston/MKBOXPRO_MP157F_Demo")
 import config
 
@@ -39,6 +40,13 @@ SdkOptions={
     "discoveryUrl":"https://awsdiscovery.iotconnect.io/",
     "IsDebug": False
 }
+
+
+def debug_print_to_file(target_string):
+    timestamp = str(datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S") + " ///// " )
+    with open('debug_print_output.txt', 'a') as debug_file:
+        debug_file.write(timestamp + target_string + '\n')
+
 
 def DeviceCallback(msg):
     global Sdk
@@ -153,6 +161,8 @@ def main():
                 sys.exit(0)
                  
     except Exception as ex:
+        debug_print_to_file("main loop exception: " + str(ex))
+        debug_print_to_file(str(traceback.format_exc()))
         print(ex)
         sys.exit(0)
 
