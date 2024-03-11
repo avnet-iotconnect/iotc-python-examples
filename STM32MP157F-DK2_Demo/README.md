@@ -172,8 +172,8 @@ The demos in this directory use a [Discovery kit with STM32MP157F MPU](https://w
 
 * Enter the Unique ID for your device from Step 4 into the *unique_id* field, **within the quotation marks.**
 
-* If preparing the demo to showcase the the FP-AI-PDMWBSOC function pack, change the *proteus_fw_version* field from "Standard" to "AI"
-  * If preparing the demo to showcase the default PROTEUS firmware, leave this field as "Standard"
+* For this general demo, leave the *sensor* field as "Default"
+  *  To connect your gateway to a sensor and acquire real data, refer to the appropriate README for the supported sensor pack within the [plugins](https://github.com/avnet-iotconnect/iotc-python-examples/tree/main/STM32MP157F-DK2_Demo/plugins) directory.
 
 * Save the *config.py* file and close the text editor.
 
@@ -210,7 +210,7 @@ The demos in this directory use a [Discovery kit with STM32MP157F MPU](https://w
 ## Step 9: View the Data
 * If the "sensor" data field in the config.py file is left as "default" the main program will just send dummy data (random integers) to the "Random_Integer" attribute in IoTConnect.
 
-  * To connect your gateway to a sensor and acquire real data, refer to the appropriate README for the supported sensor pack within the plugins directory.
+  * To connect your gateway to a sensor and acquire real data, refer to the appropriate README for the supported sensor pack within the [plugins](https://github.com/avnet-iotconnect/iotc-python-examples/tree/main/STM32MP157F-DK2_Demo/plugins) directory.
 
 * Navigate back to the “Device” menu and select your device named "STM32MP157F" (or your custom Display Name if you did not use the default).
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
