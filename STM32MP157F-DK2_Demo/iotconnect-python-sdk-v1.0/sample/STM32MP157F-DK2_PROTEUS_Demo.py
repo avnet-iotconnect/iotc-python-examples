@@ -6,17 +6,18 @@ import random
 from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
-import getopt
-import proteus_AI_plugin
-import proteus_standard_plugin
-sys.path.append("/home/weston/PROTEUS_MP157F_Demo")
+import importlib
+sys.path.append("/home/weston/STM32MP157F_Demo")
+sys.path.append("/home/weston/STM32MP157F_Demo/plugins")
 import config
 
-# Get CPID, Environment, uniqueID, and proteus FW values from config file
 cpid = config.cpid
 env = config.env
 UniqueId = config.unique_id
-fw = config.proteus_fw_version
+plugin = config.plugin
+
+if plugin != "Default":
+    plugin_module = importlib.import_module(plugin) 
 	
 SId = ""
 Sdk=None
@@ -27,9 +28,9 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/PROTEUS_MP157F_Demo/device_certificates/pk_" + UniqueId + ".pem", 
-		"SSLCertPath" : "/home/weston/PROTEUS_MP157F_Demo/device_certificates/cert_" + UniqueId + ".crt",
-		"SSLCaPath"   : "/home/weston/PROTEUS_MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLKeyPath"  : "/home/weston/STM32MP157F_Demo/device_certificates/pk_" + UniqueId + ".pem", 
+		"SSLCertPath" : "/home/weston/STM32MP157F_Demo/device_certificates/cert_" + UniqueId + ".crt",
+		"SSLCaPath"   : "/home/weston/STM32MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
@@ -49,7 +50,6 @@ def DeviceCallback(msg):
     cmdType = None
     if msg != None and len(msg.items()) != 0:
         cmdType = msg["ct"] if "ct"in msg else None
-    # Other Command
     if cmdType == 0:
         data=msg
         if data != None:
@@ -62,7 +62,7 @@ def DeviceCallback(msg):
     else:
         print("rule command",msg)
 
-    # Firmware Upgrade
+
 def DeviceFirmwareCallback(msg):
     global Sdk,device_list
     print("\n--- firmware Command Message Received ---")
@@ -70,7 +70,6 @@ def DeviceFirmwareCallback(msg):
     cmdType = None
     if msg != None and len(msg.items()) != 0:
         cmdType = msg["ct"] if msg["ct"] != None else None
-
     if cmdType == 1:
         data = msg
         if data != None:
@@ -82,6 +81,7 @@ def DeviceFirmwareCallback(msg):
                                 Sdk.sendOTAAckCmd(data["ack"],0,"sucessfull",i["id"]) #Success=0, Failed = 1, Executed/DownloadingInProgress=2, Executed/DownloadDone=3, Failed/DownloadFailed=4
                     else:
                         Sdk.sendOTAAckCmd(data["ack"],0,"sucessfull") #Success=0, Failed = 1, Executed/DownloadingInProgress=2, Executed/DownloadDone=3, Failed/DownloadFailed=4
+
 
 def DeviceConectionCallback(msg):  
     cmdType = None
@@ -102,9 +102,11 @@ def TwinUpdateCallback(msg):
                 if ("version" not in j) and ("uniqueId" not in j):
                     Sdk.UpdateTwin(j,msg["desired"][j])
 
+
 def sendBackToSDK(sdk, dataArray):
     sdk.SendData(dataArray)
     time.sleep(interval)
+
 
 def DirectMethodCallback1(msg,methodname,rId):
     global Sdk,ACKdirect
@@ -114,6 +116,7 @@ def DirectMethodCallback1(msg,methodname,rId):
     data={"data":"succed"}
     ACKdirect.append({"data":data,"status":200,"reqId":rId})
 
+
 def DirectMethodCallback(msg,methodname,rId):
     global Sdk,ACKdirect
     print(msg)
@@ -122,22 +125,23 @@ def DirectMethodCallback(msg,methodname,rId):
     data={"data":"fail"}
     ACKdirect.append({"data":data,"status":200,"reqId":rId})
 
+
 def DeviceChangeCallback(msg):
     print(msg)
 
+
 def InitCallback(response):
     print(response)
-    
+
+
 def main():
-    global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,fw
+    global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,plugin
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-                if fw == "Standard":
-                    proteus_thread = threading.Thread(target=proteus_standard_plugin.proteus_loop)
-                else:
-                    proteus_thread = threading.Thread(target=proteus_AI_plugin.proteus_loop)
-                proteus_thread.start()
+		if plugin != "Default":
+                    sensor_thread = threading.Thread(target=plugin_module.main_loop)
+                    sensor_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
                 Sdk.onTwinChangeCommand(TwinUpdateCallback)
                 Sdk.onOTACommand(DeviceFirmwareCallback)
@@ -145,19 +149,17 @@ def main():
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
-                    if fw == "Standard":
+		    if plugin != "Default":
                         dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-			    #Access updated data dictionary from plugin file
-                            "data": proteus_standard_plugin.telemetry
+                            "data": plugin_module.telemetry
                         }]
-                    else:
-                        dObj = [{
+		    else:
+			dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-			    #Access updated data dictionary from plugin file
-                            "data": proteus_AI_plugin.telemetry
+                            "data": {"Random_Integer": random.randint(1,100)}
                         }]
                     sendBackToSDK(Sdk, dObj)
                     
