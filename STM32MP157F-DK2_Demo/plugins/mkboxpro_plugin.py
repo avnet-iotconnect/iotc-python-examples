@@ -100,7 +100,7 @@ def accel_gyro_magnet_data_handler(characteristic: BleakGATTCharacteristic, data
 
 #This asynchronous function connects the gateway to the MKBOXPRO via BLE 
 #and turns on the notifications for the desired characteristics
-async def mkboxpro_functionality():
+async def main_functionality():
     try:
         #Reset the bluetooth system
         setup_bluetooth()
@@ -126,12 +126,12 @@ async def mkboxpro_functionality():
         debug_print_to_file(str(traceback.format_exc()))
 
 #This loop is what the dedicated proteus thread will run when started in the main loop
-def mkboxpro_loop():
+def main_loop():
     try:
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         #Runs the func
-        loop.run_until_complete(mkboxpro_functionality())
+        loop.run_until_complete(main_functionality())
         loop.close()
     except Exception as ex:
         debug_print_to_file("mkboxpro_loop exception: " + str(ex))
