@@ -172,7 +172,7 @@ The demos in this directory use a [Discovery kit with STM32MP157F MPU](https://w
 
 * Enter the Unique ID for your device from Step 4 into the *unique_id* field, **within the quotation marks.**
 
-* For this general demo, leave the *sensor* field as "Default"
+* For this general demo, leave the *plugin* field as "Default"
   *  To connect your gateway to a sensor and acquire real data, refer to the appropriate README for the supported sensor pack within the [plugins](https://github.com/avnet-iotconnect/iotc-python-examples/tree/main/STM32MP157F-DK2_Demo/plugins) directory.
 
 * Save the *config.py* file and close the text editor.
@@ -208,7 +208,7 @@ The demos in this directory use a [Discovery kit with STM32MP157F MPU](https://w
   * ```reboot```
 
 ## Step 9: View the Data
-* If the "sensor" data field in the config.py file is left as "default" the main program will just send dummy data (random integers) to the "Random_Integer" attribute in IoTConnect.
+* If the "plugin" data field in the config.py file is left as "Default" the main program will send dummy data (random integers) to the "Random_Integer" attribute for the device in IoTConnect.
 
   * To connect your gateway to a sensor and acquire real data, refer to the appropriate README for the supported sensor pack within the [plugins](https://github.com/avnet-iotconnect/iotc-python-examples/tree/main/STM32MP157F-DK2_Demo/plugins) directory.
 
