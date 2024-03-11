@@ -1,4 +1,4 @@
 cpid = ""
 env = ""
 unique_id = ""
-sensor = "Default"
+plugin = "Default"
