@@ -205,9 +205,13 @@ The demos in this directory use a [Discovery kit with STM32MP157F MPU](https://w
   * **NOTE: This setup script will take several minutes to complete.** 
  
 * The main IoTConnect program has been configured to run on boot, so now reboot the gateway with the command:
-  * ```reboot```   
+  * ```reboot```
 
 ## Step 9: View the Data
+* If the "sensor" data field in the config.py file is left as "default" the main program will just send dummy data (random integers) to the "Random_Integer" attribute in IoTConnect.
+
+  * To connect your gateway to a sensor and acquire real data, refer to the appropriate README for the supported sensor pack within the plugins directory.
+
 * Navigate back to the “Device” menu and select your device named "STM32MP157F" (or your custom Display Name if you did not use the default).
    * You should see that the entry in the "Device Status" column shows a green "CONNECTED" label.
 
