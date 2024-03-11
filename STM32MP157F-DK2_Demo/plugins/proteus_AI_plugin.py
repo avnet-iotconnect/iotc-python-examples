@@ -78,7 +78,7 @@ def anomaly_detection_data_handler(characteristic: BleakGATTCharacteristic, data
 
 #This asynchronous function connects the gateway to the PROTEUS via BLE 
 #and turns on the notifications for the desired characteristics
-async def proteus_functionality():
+async def main_functionality():
     #Reset the bluetooth system
     setup_bluetooth()
     print("starting scan...")
@@ -100,9 +100,9 @@ async def proteus_functionality():
 
 
 #This loop is what the dedicated proteus thread will run when started in the main loop
-def proteus_loop():
+def main_loop():
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     #Runs the func
-    loop.run_until_complete(proteus_functionality())
+    loop.run_until_complete(main_functionality())
     loop.close()
