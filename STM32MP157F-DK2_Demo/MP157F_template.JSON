@@ -1,0 +1,274 @@
+{
+    "code": "MP157F",
+    "name": "MP157F",
+    "authType": 2,
+    "attributes": [
+        {
+            "name": "accel_x_mGs",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_y_mGs",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_z_mGs",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "gyro_x_dps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "gyro_y_dps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "gyro_z_dps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_status_x",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_status_y",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_status_z",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_x_mmps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_y_mmps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "rms_speed_z_mmps",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_status_x",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_status_y",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_status_z",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_x_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_y_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "accel_peak_z_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_status_x",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_status_y",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_status_z",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_x_hz",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_y_hz",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_z_hz",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_max_amp_x_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_max_amp_y_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "freq_max_amp_z_ms2",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "temperature_deg_C",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "battery_percentage",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "battery_voltage",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "battery_current",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "battery_status",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "pressure_mBar",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "magnet_x_mGa",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "magnet_y_mGa",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "magnet_z_mGa",
+            "type": "DECIMAL",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_phase",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_state",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_progress_percentage",
+            "type": "INTEGER",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_status",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "NEAI_similarity_percentage",
+            "type": "INTEGER",
+            "description": null,
+            "unit": null
+        }
+    ],
+    "commands": [
+        {
+            "name": "LEDGreen",
+            "command": "ledgreen",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        }
+    ],
+    "messageVersion": "2.1",
+    "msgCode": "XG4E2ZT",
+    "greenGrass": "0",
+    "wireless": "0",
+    "properties": {
+        "description": null,
+        "dataFrequency": "5",
+        "fileSupport": false
+    },
+    "_meta": {
+        "version": "2.0"
+    }
+}
