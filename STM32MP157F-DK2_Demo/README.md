@@ -1,4 +1,4 @@
-# PROTEUS / STM32MP157F-DK2 Demo (For IoTConnect on AWS)
+# STM32MP157F-DK2 Demos (For IoTConnect on AWS)
 
 This demo uses an [Discovery kit with STM32MP157F MPU](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) to run an IoTConnect program to monitor precise telemetry data in real-time on the IoTConnect cloud platform using AWS. 
 
