@@ -152,8 +152,8 @@ def main():
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
                             "data": plugin_module.telemetry
                         }]
-		    else:
-			dObj = [{
+                    else:
+                        dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
                             "data": {"Random_Integer": random.randint(1,100)}
