@@ -23,6 +23,7 @@ interval = 5
 directmethodlist={}
 ACKdirect=[]
 device_list=[]
+device_messages=[]
 
 SdkOptions={
 	"certificate" : { 
@@ -43,12 +44,16 @@ SdkOptions={
 
 def DeviceCallback(msg):
     global Sdk
-    print("\n--- Command Message Received in Firmware ---")
-    print(json.dumps(msg))
+    global device_messages
+    print("\n--- IoTConnect Command Received ---")
+    print(msg)
     cmdType = None
     if msg != None and len(msg.items()) != 0:
-        cmdType = msg["ct"] if "ct"in msg else None
+        cmdType = msg["ct"] if "ct" in msg else None
     if cmdType == 0:
+        command = command_dict['cmd']
+        device_message_str = "IOTCONNECT COMMAND RECEIVED: " + command
+        device_messages.append(device_message_str)
         data=msg
         if data != None:
             if "id" in data:
@@ -133,7 +138,7 @@ def InitCallback(response):
 
 
 def main():
-    global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,plugin
+    global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,plugin, device_messages
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
@@ -154,10 +159,16 @@ def main():
                             "data": plugin_module.telemetry
                         }]
                     else:
+                        data = {"random_integer": random.randint(1,100), "device_messages": ""}
+                        if device_messages:
+                            for msg in device_messages:
+	                        if data["device_messages"] != "":
+	                            data["device_messages"] += ", "
+                                data["device_messages"] += msg
                         dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-                            "data": {"Random_Integer": random.randint(1,100)}
+                            "data": data
                         }]
                     sendBackToSDK(Sdk, dObj)
                     
