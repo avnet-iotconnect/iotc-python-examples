@@ -156,7 +156,10 @@
 
 <img src=".//media/image14.png"/>
 
-* To get a more human-friendly report of the live telemetry data, click on the "Tabular" tab.
-   * This tab allows you to scroll vertically to view previous data entires, and horizontally to see each individual attribute.
+* Now you can monitor the stream of pseudo-data coming in from the device.
 
-<img src=".//media/image15.png"/>
+* To send the device commands, navigate to the "Command" tab, select a command from the dropdown menu, and hit "Execute"
+
+<img src=".//media/image42.png"/>
+
+* The 3 different commands don't actually do anything yet for the purposes of this demo, but to verify that the device received the commands, go back to the "Live Data" tab and look for a telemetry message with the "device_messages" attribute included. One should say "IOTCONNECT COMMAND RECEIVED: " followed by the number of the command that you sent. 
