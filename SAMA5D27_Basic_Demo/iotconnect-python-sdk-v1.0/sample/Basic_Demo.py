@@ -6,6 +6,7 @@ import random
 from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
+sys.path.append("/home/root/SAMA5D27_Basic_Demo")
 import config
 
 cpid = config.cpid
