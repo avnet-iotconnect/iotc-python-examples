@@ -51,7 +51,7 @@ def DeviceCallback(msg):
     if msg != None and len(msg.items()) != 0:
         cmdType = msg["ct"] if "ct" in msg else None
     if cmdType == 0:
-        command = command_dict['cmd']
+        command = msg['cmd']
         device_message_str = "IOTCONNECT COMMAND RECEIVED: " + command
         device_messages.append(device_message_str)
         data=msg
