@@ -17,7 +17,7 @@ if 'win' in sys.platform:
 
 elif 'linux' in sys.platform :
     if sys.version_info >= (3, 5):
-        packages_requires=["paho-mqtt","ntplib"]
+        packages_requires=["ntplib"]
     else:
         packages_requires=[]
         os.system('pip install paho-mqtt')
@@ -27,7 +27,7 @@ elif 'linux' in sys.platform :
 setup(
     name="iotconnect-sdk",
     version="1.1",
-    python_requires=">=2.7,>=3.5,<3.9",
+    python_requires=">=2.7,>=3.5,<3.100",
     description='SDK for D2C and C2D communication',
     license="MIT",
     author='SOFTWEB SOLUTIONS<admin@softwebsolutions.com> (https://www.softwebsolutions.com)',
