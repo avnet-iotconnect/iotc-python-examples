@@ -43,25 +43,19 @@
 
 <img src=".//media/image5.png"/>
 
-* For the default configuration, enter the following information and then click “Save and View”:
+* For the default configuration, enter the following information:
    * Unique Id: *your unique ID*
-   * Display Name: *your display name (must be same as unique ID)*
-   * Entity: Avnet
+   * Display Name: *your display name*
+   * Entity: *any entity will work*
    * Template: basicpoc
+    
+* Change the certificate type to "Auto-Generated" and then click on the yellow/green certificate icon to download your zipped certificated folder.
  
-      * **NOTE: For setup simplicity, this demo is designed for the Unique ID and the Display Name to be exactly the same, so it is critical that you make them identical to each other. It will not work otherwise.**
- 
-<img src=".//media/image6.png"/>
+<img src=".//media/image43.png"/>
 
-* In the resulting page, click “Connection Info” in the top-right corner of the page.
+* Click "Save" at the bottom of the page to finalize the creation of the device.
 
-<img src=".//media/image7.png"/>
-
-* Click on the yellow and green certificate icon in the top-right corner of the resulting pop-up to download the zipped certificate package.
-
-<img src=".//media/image8.png"/>
-
-* Extract the certificate package folder and save the resulting certificates folder to a known location. You will relocate them later into the setup.
+* Extract the downloaded certificate package folder and save the resulting certificates folder to a known location. You will relocate them later into the setup.
 
 ## Step 5: Flash Yocto Image to SD Card
 * [Click here](https://www.linux4sam.org/bin/view/Linux4SAM/Sama5d27Som1EKMainPage#eMMC_support_on_SDMMC0) to go to the image download/instructions page for images for the SAMA5D27.
@@ -86,7 +80,7 @@
 
 * In your copy of the *SAMA5D27_Basic_Demo* directory, navigate to the *device_certificates* folder.
 
-* Copy your two individual device certificates from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual *.pem* and *.crt* files.**
+* Copy your two individual device certificates (device.key and DeviceCertificate.pem) from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual files.**
 
 * Back in the *SAMA5D27_Basic_Demo* directory, open up the file *config.py* in a generic text editor.
 
