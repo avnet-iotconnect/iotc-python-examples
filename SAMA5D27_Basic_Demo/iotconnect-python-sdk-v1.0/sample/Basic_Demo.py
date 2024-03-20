@@ -152,7 +152,7 @@ def main():
                 Sdk.getTwins()
                 device_list=Sdk.Getdevice()
                 while True:
-		    if plugin != "Default":
+                    if plugin != "Default":
                         dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
@@ -163,10 +163,10 @@ def main():
                         if device_messages:
                             data["device_messages"] = ""
                             for msg in device_messages:
-	                        if data["device_messages"] != "":
-	                            data["device_messages"] += ", "
+                                if data["device_messages"] != "":
+                                    data["device_messages"] += ", "
                                 data["device_messages"] += msg
-			    device_messages = []
+                            device_messages = []
                         dObj = [{
                             "uniqueId": UniqueId,
                             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z"),
