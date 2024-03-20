@@ -27,9 +27,9 @@ device_messages=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/root/SAMA5D27_Basic_Demo/device_certificates/pk_" + UniqueId + ".pem", 
-		"SSLCertPath" : "/home/root/SAMA5D27_Basic_Demo/device_certificates/cert_" + UniqueId + ".crt",
-		"SSLCaPath"   : "/home/root/SAMA5D27_Basic_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLKeyPath"  : "/home/root/SAMA5D27_Basic_Demo/device_certificates/device.key", 
+		"SSLCertPath" : "/home/root/SAMA5D27_Basic_Demo/device_certificates/DeviceCertificate.pem",
+		"SSLCaPath"   : "/home/root/SAMA5D27_Basic_Demo/iotconnect-python-sdk-v1.0/iotconnect/assets/DigiCertGlobalRootG2.txt"
 	},
     "offlineStorage":{
         "disabled": False,
@@ -38,7 +38,7 @@ SdkOptions={
         "keepalive":60
     },
     "skipValidation":False,
-    "discoveryUrl":"https://awsdiscovery.iotconnect.io/",
+    "discoveryUrl":"https://discovery.iotconnect.io/",
     "IsDebug": False
 }
 
