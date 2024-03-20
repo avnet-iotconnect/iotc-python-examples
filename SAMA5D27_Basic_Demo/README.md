@@ -1,4 +1,4 @@
-# SAMA5D27 Basic Demo (For IoTConnect on AWS) 
+# SAMA5D27 Basic Demo (For IoTConnect on Azure) 
 
 <img src=".//media/image34.png"/> 
 
@@ -6,7 +6,7 @@
 * To get started making an IoTConnect account, you can contact our team at info@iotconnect.io
 
 ## Step 2: Sign in to IoTConnect Account
-* This demo uses IoTConnect on AWS.
+* This demo uses IoTConnect on Azure.
 * An IoTConnect account is required to continue with this guide. If you need to create an account, a free 2-month subscription is available. Please follow the [Creating a New IoTConnect Account](https://github.com/avnet-iotconnect/avnet-iotconnect.github.io/blob/main/documentation/iotconnect/subscription/subscription.md) guide and return to this guide once complete.
 
 ## Step 3: Import a Template for Your Device 
