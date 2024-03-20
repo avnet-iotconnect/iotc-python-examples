@@ -13,6 +13,7 @@ cpid = config.cpid
 env = config.env
 UniqueId = config.unique_id
 plugin = config.plugin
+pf = "AZ"
 
 if plugin != "Default":
     plugin_module = importlib.import_module(plugin) 
@@ -29,7 +30,7 @@ SdkOptions={
 	"certificate" : { 
 		"SSLKeyPath"  : "/home/root/SAMA5D27_Basic_Demo/device_certificates/device.key", 
 		"SSLCertPath" : "/home/root/SAMA5D27_Basic_Demo/device_certificates/DeviceCertificate.pem",
-		"SSLCaPath"   : "/home/root/SAMA5D27_Basic_Demo/iotconnect-python-sdk-v1.0/iotconnect/assets/DigiCertGlobalRootG2.txt"
+		"SSLCaPath"   : "/home/root/SAMA5D27_Basic_Demo/iotconnect-sdk/iotconnect/assets/DigiCertGlobalRootG2.txt"
 	},
     "offlineStorage":{
         "disabled": False,
@@ -140,7 +141,7 @@ def InitCallback(response):
 def main():
     global SId,cpid,env,SdkOptions,Sdk,ACKdirect,device_list,plugin, device_messages
     try:
-        with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
+        with IoTConnectSDK(UniqueId,SId,cpid,env,pf,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
                 if plugin != "Default":
                     sensor_thread = threading.Thread(target=plugin_module.main_loop)
