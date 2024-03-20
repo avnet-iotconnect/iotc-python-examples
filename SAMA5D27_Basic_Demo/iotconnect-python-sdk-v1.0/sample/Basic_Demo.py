@@ -136,7 +136,7 @@ def main():
     try:
         with IoTConnectSDK(UniqueId,SId,cpid,env,SdkOptions,DeviceConectionCallback) as Sdk:
             try:
-		if plugin != "Default":
+                if plugin != "Default":
                     sensor_thread = threading.Thread(target=plugin_module.main_loop)
                     sensor_thread.start()
                 Sdk.onDeviceCommand(DeviceCallback)
