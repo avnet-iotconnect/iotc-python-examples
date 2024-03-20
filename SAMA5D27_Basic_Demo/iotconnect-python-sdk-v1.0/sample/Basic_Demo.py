@@ -13,7 +13,7 @@ env = config.env
 UniqueId = config.unique_id
 plugin = config.plugin
 
-plugin != "Default":
+if plugin != "Default":
     plugin_module = importlib.import_module(plugin) 
 	
 SId = ""
