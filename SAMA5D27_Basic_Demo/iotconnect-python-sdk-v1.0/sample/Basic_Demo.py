@@ -6,9 +6,6 @@ import random
 from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
-import importlib
-sys.path.append("/home/weston/STM32MP157F_Demo")
-sys.path.append("/home/weston/STM32MP157F_Demo/plugins")
 import config
 
 cpid = config.cpid
@@ -16,7 +13,7 @@ env = config.env
 UniqueId = config.unique_id
 plugin = config.plugin
 
-if plugin != "Default":
+plugin != "Default":
     plugin_module = importlib.import_module(plugin) 
 	
 SId = ""
@@ -28,9 +25,9 @@ device_list=[]
 
 SdkOptions={
 	"certificate" : { 
-		"SSLKeyPath"  : "/home/weston/STM32MP157F_Demo/device_certificates/pk_" + UniqueId + ".pem", 
-		"SSLCertPath" : "/home/weston/STM32MP157F_Demo/device_certificates/cert_" + UniqueId + ".crt",
-		"SSLCaPath"   : "/home/weston/STM32MP157F_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
+		"SSLKeyPath"  : "/home/root/SAMA5D27_Basic_Demo/device_certificates/pk_" + UniqueId + ".pem", 
+		"SSLCertPath" : "/home/root/SAMA5D27_Basic_Demo/device_certificates/cert_" + UniqueId + ".crt",
+		"SSLCaPath"   : "/home/root/SAMA5D27_Basic_Demo/iotconnect-python-sdk-v1.0/sample/aws_cert/root-CA.pem"
 	},
     "offlineStorage":{
         "disabled": False,
