@@ -287,7 +287,7 @@ class mqttclient:
                     self._client.tls_set(self._path_to_root_cert, tls_version = ssl.PROTOCOL_TLSv1_2)
             elif (self._auth_type == authType["CA_SIGNED"] or self._auth_type == authType["CA_ind"]) :
                 if self._config['pf'] == "az":
-                    self._client.username_pw_set(self._config["un"], self._config["pwd"])
+                    self._client.username_pw_set(self._config["un"], password=None)
                 cert_setting = self._validateSSL(self._sdk_config["certificate"])
                 if len(cert_setting) != 3:
                     raise(IoTConnectSDKException("01", "Certificate/Key in Sdkoption"))
