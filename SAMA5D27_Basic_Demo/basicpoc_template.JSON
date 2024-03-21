@@ -46,7 +46,7 @@
     "msgCode": "GXBJNOI",
     "properties": {
         "description": null,
-        "dataFrequency": "60",
+        "dataFrequency": "5",
         "fileSupport": false
     },
     "_meta": {
