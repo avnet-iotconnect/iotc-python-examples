@@ -7,7 +7,7 @@
         {
             "name": "random_integer",
             "displayName": null,
-            "type": "STRING",
+            "type": "INTEGER",
             "description": null,
             "unit": null
         },
