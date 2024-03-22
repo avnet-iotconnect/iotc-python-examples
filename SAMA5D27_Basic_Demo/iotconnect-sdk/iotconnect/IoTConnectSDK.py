@@ -389,8 +389,6 @@ class IoTConnectSDK:
                             self._listner_callback(msg)
                         self.write_debuglog('[INFO_CM09] '+ self._time +'['+ str(self._sId)+'_'+ str(self._uniqueId) + "] 0x116 sdk connection status: " + msg["command"],0)
                         return
-                
-                        
             if self._is_process_started == False:
                 return
             if "ct" not in msg:
@@ -538,25 +536,19 @@ class IoTConnectSDK:
                 else:
                     self.write_debuglog('[ERR_IN06] '+ self._time +'['+ str(self._sId)+'_'+ str(self._uniqueId) + "] sdkOption: set proper certificate file path and try again",1)
                     raise(IoTConnectSDKException("01","Certificate/Key in Sdkoption"))
-
             if auth_type == 5:
                 if ("devicePrimaryKey" in self._property) and self._property["devicePrimaryKey"]:
                     protocol_cofig["pwd"]=self.generate_sas_token(protocol_cofig["h"],self._property["devicePrimaryKey"])
                 else:
                     raise(IoTConnectSDKException("01", "devicePrimaryKey"))
-
             if self._client != None:
                 self._client = None
-            
             if name == "mqtt":
                 self._client = mqttclient(auth_type, protocol_cofig, self._config, self.onMessage,self.onDirectMethodMessage, self.onTwinMessage) 
             elif name == "http" or name == "https":
                 self._client = httpclient(protocol_cofig, self._config)
             else:
                 self._client = None
-
-            
-
         except Exception as ex:
             raise(ex)
     
@@ -622,9 +614,6 @@ class IoTConnectSDK:
                         data = { "_connectionStatus": "true" }
                         self._client.SendTwinData(data)
                         print("\nPublish connection status shadow sucessfully... %s" % self._time)
-                    
-                                                                    
-
                     if self.has_key(self._data_json,"has") and self._data_json["has"]["attr"]:
                         # self._hello_handsake({"mt":201,"sid":self._sId})
                         self._hello_handsake({"mt":201})
@@ -633,21 +622,16 @@ class IoTConnectSDK:
                     if self.has_key(self._data_json,"has") and self._data_json["has"]["r"]:
                         self._hello_handsake({"mt":203 ,"sid":self._sId})
                     if self.has_key(self._data_json,"has") and self._data_json["has"]["d"]:
-                        self._hello_handsake({"mt":204,"sid":self._sId})
-                        
-                                           
+                        self._hello_handsake({"mt":204,"sid":self._sId}) 
                     else:
                         if self._data_json['meta']['gtw'] != None:
                             self._data_json['d']=[{'tg': self._data_json['meta']['gtw']['tg'],'id': self._uniqueId}]
                         else:
                             self._data_json['d']=[{'tg': '','id': self._uniqueId}]
-
-                        
-
                     if self.has_key(self._data_json,"has") and self._data_json["has"]["ota"]:
                         self._hello_handsake({"mt":205,"sid":self._sId})
                     if "df" in self._data_json['meta'] and self._data_json['meta']["df"]:
-                        self._data_frequency=self._data_json['meta']["df"]
+                        self._data_frequency=1
                 
         except Exception as ex:
             raise ex
