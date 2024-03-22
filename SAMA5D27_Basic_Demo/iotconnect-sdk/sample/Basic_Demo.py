@@ -20,7 +20,7 @@ if plugin != "Default":
 	
 SId = ""
 Sdk=None
-interval = 5
+interval = 1
 directmethodlist={}
 ACKdirect=[]
 device_list=[]
