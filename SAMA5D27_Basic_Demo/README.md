@@ -68,17 +68,15 @@
   * **NOTE: The flashing utility will likely say the flash failed at the very end, but the flash actually completed successfully. It is a non-crtitical verification step that failed. Proceed as normal.**
 
 ## Step 6: Prepare Necessary Files
-* In another browser tab, navigate to [the top of this repository] (https://github.com/avnet-iotconnect/iotc-python-examples/tree/main) and download the repository's zip file as shown here:
+* In another browser tab, navigate to [the Download Directory GitHub tool] (https://download-directory.github.io/)
 
-<img src=".//media/image_a.png"/>
+* Paste this URL into the prompt and press enter: https://github.com/avnet-iotconnect/iotc-python-examples/tree/main/SAMA5D27_Basic_Demo
 
-* Unzip the downloaded folder and then open it.
+<img src=".//media/image50.png"/> 
+
+* Unzip the downloaded folder, rename it to SAMA5D27_Basic_Demo, and then open it.
   
-* Navigate to the *iotc-python-examples-main* directory (the name of the overall repo and the first sub-directory will have the same name)
-  
-* Copy the *SAMA5D27_Basic_Demo* folder to a known location. This is the only part of the repository you will need for this demo.
-
-* In your copy of the *SAMA5D27_Basic_Demo* directory, navigate to the *device_certificates* folder.
+*Navigate to the *device_certificates* folder.
 
 * Copy your two individual device certificates (device.key and DeviceCertificate.pem) from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual files.**
 
