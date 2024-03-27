@@ -68,7 +68,7 @@
   * **NOTE: The flashing utility will likely say the flash failed at the very end, but the flash actually completed successfully. It is a non-crtitical verification step that failed. Proceed as normal.**
 
 ## Step 6: Prepare Necessary Files
-* In another browser tab, navigate to [the Download Directory GitHub tool] (https://download-directory.github.io/)
+* In another browser tab, navigate to [the Download Directory GitHub tool](https://download-directory.github.io/)
 
 * Paste this URL into the prompt and press enter: https://github.com/avnet-iotconnect/iotc-python-examples/tree/main/SAMA5D27_Basic_Demo
 
