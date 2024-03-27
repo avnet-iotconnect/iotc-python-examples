@@ -76,7 +76,7 @@
 
 * Unzip the downloaded folder, rename it to SAMA5D27_Basic_Demo, and then open it.
   
-*Navigate to the *device_certificates* folder.
+* Navigate to the *device_certificates* folder.
 
 * Copy your two individual device certificates (device.key and DeviceCertificate.pem) from the folder you saved in Step 4 into this folder. **You cannot copy the whole certificate folder, you must copy the individual files.**
 
