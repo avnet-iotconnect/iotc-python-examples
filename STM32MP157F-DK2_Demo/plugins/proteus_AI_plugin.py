@@ -4,6 +4,9 @@ from bleak.backends.characteristic import BleakGATTCharacteristic
 import time
 import sys
 import pexpect
+import importlib
+sys.path.append("/home/weston/STM32MP157F_Demo")
+import 
 
 # Anomaly Detection mode can either be "Learning" or "Detection"
 AD_Mode = "Learning"
