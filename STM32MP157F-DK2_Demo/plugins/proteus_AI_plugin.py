@@ -4,16 +4,10 @@ from bleak.backends.characteristic import BleakGATTCharacteristic
 import time
 import sys
 import pexpect
+import os
 import importlib
 sys.path.append("/home/weston/STM32MP157F_Demo")
-import 
-
-# Anomaly Detection mode can either be "Learning" or "Detection"
-AD_Mode = "Learning"
-# Anomaly Detection can be either be "On" or "Off"
-AD_OnOff = "Off"
-# Knowledge Reset button is either "Normal" or "Pressed"
-Knowledge_Reset_Button = "Normal"
+import plugin_queue
 
 #This dictionary is what the main loop of the main 
 #program will periodcially send as telemetry to IoTConnect
@@ -41,6 +35,12 @@ def setup_bluetooth():
 #This loop is what the dedicated proteus thread will run when started in the main loop
 def main_loop():
     setup_bluetooth()
-    #KICK OFF ST EXAMPLE
+    os.system("python3 /home/weston/STM32MP157F-DK2/example_ble_11.py")
     while True:
-        #CHECK EVERY HALF SECOND IF THERE IS NEW DATA IN THE QUEUE AND UPDATE THE DICTIONARY ACCORDINGLY
+        if plugin_queue.data:
+            telemetry["NEAI_phase"] = plugin_queue.data["Phase"]
+            telemetry["NEAI_state"] = plugin_queue.data["State"]
+            telemetry["NEAI_progress_percentage"] = int(plugin_queue.data["Progress"])
+            telemetry["NEAI_status"] = plugin_queue.data["Status"]
+            telemetry["NEAI_similarity_percentage"] = int(plugin_queue.data["Similarity"])
+            time.sleep(0.5)
