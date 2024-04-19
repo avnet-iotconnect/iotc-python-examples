@@ -35,7 +35,7 @@ def main_loop():
     while True
         print("Establishing BLE connection to PROTEUS")
         setup_bluetooth()
-        proteus_connection_process = subprocess.Popen(['python3', '/home/weston/STM32MP157F-DK2/example_ble_11.py'])
+        proteus_connection_process = subprocess.Popen(['python3', '/home/weston/STM32MP157F_Demo/example_ble_11.py'])
         while True:
             still_alive = proteus_connection_process.poll()
             if still_alive is not None:
