@@ -3,10 +3,8 @@ import json
 import time
 import threading
 import random
-from iotconnect import IoTConnectSDK
 from datetime import datetime
 import os
-import importlib
 sys.path.append("/home/weston/STM32MP157F_Demo")
 sys.path.append("/home/weston/STM32MP157F_Demo/plugins")
 import proteus_AI_plugin
