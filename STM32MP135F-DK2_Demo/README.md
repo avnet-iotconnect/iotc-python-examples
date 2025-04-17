@@ -78,15 +78,15 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 **Do not rename the folder, it needs to keep the name “STM32MP135F-certificates” in order to work properly.**
 
 ## Step 5: Flash IoTConnect-Compatible Image to Board
-* To download the zipped image folder, [click here](https://ln5.sync.com/dl/fd0051950/4qnh3efg-2wauv97s-pzkfbf5w-4bsuucs2).
-* Unzip the folder to a known location.
+* To download the latest available image, go to the [STM32MP1 OpenSTLinux Starter Package page](https://www.st.com/en/embedded-software/stm32mp1starter.html).
+* Extract the image archive to a known location.
 * Download and Install the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) software (the utility for flashing the image to the device).
    * You may have to create an ST account (it's free) to get access to the software download.
 * Set up the STM32MP135F-DK board for flashing:
    * Near the bottom of the board, flip the dipswitches in this fashion:
-      * 1: Closed
+      * 1: Open
       * 2: Open
-      * 3: Closed
+      * 3: Open
       * 4: Open
   
       <img src=".//media/image16.png"/>
@@ -110,7 +110,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 
 <img src=".//media/image21.png"/>
       
-* Navigate to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1\flashlayout_st-image-weston\optee
+* Navigate to the directory where you have the extracted the image archive, and then navigate through the folder to get to this directory: {Your preliminary directory}\images\stm32mp1\flashlayout_st-image-weston\optee
    * Select the FlashLayout_sdcard_stm32mp135f-dk-optee.tsv file and then click "Open." 
    
 <img src=".//media/image22.png"/>
@@ -119,7 +119,7 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
    
 <img src=".//media/image23.png"/>
    
-* Navigate once again to the directory where you have the unzipped "OpenSTLinux_IoTConnect_Compatible" folder, and then navigate through the folder to get to this directory: {Your preliminary directory}\OpenSTLinux_IoTConnect_Compatible\images\stm32mp1
+* Navigate once again to the directory where you have extracted the image archive, and then navigate through the folder to get to this directory: {Your preliminary directory}\images\stm32mp1
    * Select the stm32mp1 folder and then click "Select folder."
 
 <img src=".//media/image24.png"/>
