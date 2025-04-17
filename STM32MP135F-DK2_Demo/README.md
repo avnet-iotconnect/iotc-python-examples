@@ -143,9 +143,9 @@ For the purposes of this basic demo, the telemetry data is simple a random integ
 <img src=".//media/image28.png"/>
    
 * Now, flip the boot dipswitches on the underside of your board both to these positions:
-   * 1: Open
+   * 1: Closed
    * 2: Open
-   * 3: Open
+   * 3: Closed
    * 4: Open
 
 <img src=".//media/image17.png"/>
